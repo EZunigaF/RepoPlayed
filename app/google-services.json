@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "974487096828",
+    "firebase_url": "https://playerrevie2.firebaseio.com",
+    "project_id": "playerrevie2",
+    "storage_bucket": "playerrevie2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974487096828:android:ea5a1878d49b0937ab3679",
+        "android_client_info": {
+          "package_name": "com.example.loginapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974487096828-4tdrr4qe5skgeg481qpe16ug1vi9m5r2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.loginapp",
+            "certificate_hash": "a4ddcd4e0449958d159e2a02cafffe895bc4c7d0"
+          }
+        },
+        {
+          "client_id": "974487096828-iu5eqt1d1d2pfqf8rbupqro627091mkn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF5J7VeKgnPw5mRq-YiHN_YuRRUGx3omY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974487096828-iu5eqt1d1d2pfqf8rbupqro627091mkn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
