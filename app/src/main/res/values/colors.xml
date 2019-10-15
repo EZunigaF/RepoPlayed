@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWhiteD5">#D5FFFFFF</color>
     <color name="colorTransparent">#00FFFFFF</color>
-    <color name="colorMagentaNeon">#EC1AB2</color>
+    <color name="colorMagentaNeon">#B8168D</color>
     <color name="colorCyanNeon">#05D8FC</color>
     <color name="login_borderColor">#125678</color>
+    <color name="black">#000000</color>
+
 </resources>

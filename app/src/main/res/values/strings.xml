@@ -4,7 +4,11 @@
     <string name="PasswordHint">Password</string>
     <string name="EmailHint">Email</string>
     <string name="forgotPass">Forgot password?</string>
-    <string name="register">Create User</string>
+    <string name="registerLogin">Create User</string>
     <string name="presstoLogin">Press to Start</string>
     <string name="logoInfo">REVIEW PLAYED ™</string>
+    <string name="nameHint">Name</string>
+    <string name="emailConfirmHint">Confirm Email</string>
+    <string name="registerUser">REGISTER</string>
+    <string name="backToLogin">Alredy Member ?</string>
 </resources>

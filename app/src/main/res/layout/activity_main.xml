@@ -11,10 +11,10 @@
     tools:visibility="visible">
 
     <ImageView
-        android:contentDescription="@string/logoInfo"
         android:id="@+id/imageView"
         android:layout_width="339dp"
         android:layout_height="245dp"
+        android:contentDescription="@string/logoInfo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.420"
@@ -29,7 +29,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/border"
+        android:background="@drawable/login_borders"
         android:ems="10"
         android:hint="@string/PasswordHint"
         android:inputType="textPassword"
@@ -46,7 +46,7 @@
         android:id="@+id/editText"
         android:layout_width="324dp"
         android:layout_height="45dp"
-        android:background="@drawable/border"
+        android:background="@drawable/login_borders"
         android:ems="10"
         android:hint="@string/EmailHint"
         android:inputType="textPersonName"
@@ -64,17 +64,16 @@
         android:id="@+id/animation_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:lottie_imageAssetsFolder="assets"
-        app:lottie_rawRes="@raw/play"
-        app:lottie_scale="0.1"
-        app:lottie_loop="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-
         app:layout_constraintVertical_bias="0.620"
-        app:lottie_autoPlay="true" />
+        app:lottie_autoPlay="true"
+        app:lottie_imageAssetsFolder="assets"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/play"
+        app:lottie_scale="0.1" />
 
     <Button
         android:id="@+id/button"
@@ -103,9 +102,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/border"
+        android:background="@drawable/login_borders"
         android:gravity="center"
-        android:text="@string/register"
+        android:text="@string/registerLogin"
         android:textColor="@color/login_borderColor"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,11 +117,11 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="175dp"
-        android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/border"
+        android:background="@drawable/login_borders"
+        android:gravity="center"
         android:shadowColor="#FFFFFF"
         android:text="@string/forgotPass"
         android:textColor="@color/login_borderColor"
@@ -132,7 +131,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.97"/>
+        app:layout_constraintVertical_bias="0.97" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -140,6 +139,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="16dp" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
