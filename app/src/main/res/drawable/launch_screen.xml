@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:drawable="@color/colorAccent"/>
+        android:drawable="@color/colorCyanNeon"/>
 
     <item>
         <bitmap

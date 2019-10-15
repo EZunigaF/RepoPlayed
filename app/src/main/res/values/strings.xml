@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Review Played</string>
     <string name="title_activity_main">Home Welcome *MainActivity*</string>
+    <string name="PasswordHint">Password</string>
+    <string name="EmailHint">Email</string>
+    <string name="forgotPass">Forgot password?</string>
+    <string name="register">Create User</string>
+    <string name="presstoLogin">Press to Start</string>
+    <string name="logoInfo">REVIEW PLAYED ™</string>
 </resources>
