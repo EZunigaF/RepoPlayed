@@ -6,30 +6,121 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-
+        <ImageView
+            android:id="@+id/logoRPtopBar"
+            android:layout_width="250dp"
+            android:layout_height="135dp"
+            android:layout_marginBottom="25dp"
+            app:srcCompat="@drawable/logo_neon_rp" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="70dp"
+            android:background="@color/colorMagentaNeon"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/homeTopBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".30"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/home_top_nav_fields"
+                    android:text="@string/homeTopBarText"
+                    android:textSize="24sp"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/colorMagentaNeon"
+                    />
+
+                <TextView
+                    android:id="@+id/postTopBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight=".30"
+                    android:background="@drawable/home_top_nav_fields"
+                    android:text="@string/postTopBarText"
+                    android:textSize="24sp"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/colorMagentaNeon"
+                    />
+
+                <TextView
+                    android:id="@+id/friendsTopBar"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight=".30"
+                    android:background="@drawable/home_top_nav_fields"
+                    android:text="@string/friendsTopBarText"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:textColor="@color/colorMagentaNeon"
+                    />
+
+
+
+            </LinearLayout>
+
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/paranoiaCollapToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#18B8DB"
+            app:layout_scrollFlags="scroll|enterAlways"
+            >
+
+            <ImageView
+                android:id="@+id/iconParanoia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="24dp"
+                android:layout_gravity="start" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/userWelcome"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/idMyname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="55dp"
+                android:textSize="26sp"
+                android:text="@string/blank"
+                android:textColor="@color/colorMagentaNeon" />
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
-
-
-    <TextView
-        android:id="@+id/idMyname"
-        android:layout_width="123dp"
-        android:layout_height="52dp"
-        android:layout_gravity="top|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:text="j" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

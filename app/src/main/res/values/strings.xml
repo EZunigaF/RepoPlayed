@@ -11,4 +11,10 @@
     <string name="emailConfirmHint">Confirm Email</string>
     <string name="registerUser">REGISTER</string>
     <string name="backToLogin">Alredy Member ?</string>
+    <string name="userWelcome">Welcome User:</string>
+    <string name="homeTopBarText">HOME</string>
+    <string name="friendsTopBarText">FRIENDS</string>
+    <string name="postTopBarText">PLAY</string>
+    <string name="blank" />
+    <string name="logoutTopMenu">Log out</string>
 </resources>
