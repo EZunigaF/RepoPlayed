@@ -1,126 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <LinearLayout
 
 
-    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/logoRPtopBar"
-            android:layout_width="250dp"
-            android:layout_height="135dp"
-            android:layout_marginBottom="25dp"
-            app:srcCompat="@drawable/logo_neon_rp" />
+        <com.google.android.material.appbar.AppBarLayout
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@color/colorMagentaNeon"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
+            android:layout_height="222dp"
+
+
+            android:background="@mipmap/rect2"
+            android:hapticFeedbackEnabled="true"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:expanded="false">
+
+
+            <androidx.appcompat.widget.Toolbar
+
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/Intro4"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="58dp"
                 android:orientation="horizontal"
-                >
+                android:paddingRight="0dp">
 
-                <TextView
-                    android:id="@+id/homeTopBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight=".30"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/home_top_nav_fields"
-                    android:text="@string/homeTopBarText"
-                    android:textSize="24sp"
+                <ImageButton
+                    android:id="@+id/logoutTopBar_Home"
+                    android:layout_width="26dp"
+                    android:layout_height="58dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="5dp"
+                    android:layout_weight=".50"
+                    android:background="@mipmap/chats"
+                    android:foregroundGravity="center"
                     android:gravity="center"
-                    android:textColor="@color/colorMagentaNeon"
-                    />
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
 
-                <TextView
-                    android:id="@+id/postTopBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight=".30"
-                    android:background="@drawable/home_top_nav_fields"
-                    android:text="@string/postTopBarText"
-                    android:textSize="24sp"
+                <ImageButton
+                    android:id="@+id/postTopBar_Home"
+                    android:layout_width="26dp"
+                    android:layout_height="58dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight=".50"
+                    android:background="@mipmap/you"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+
+
+                <ImageButton
+                    android:id="@+id/searchTopBar_Home"
+                    android:layout_width="26dp"
+                    android:layout_height="58dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="5dp"
+                    android:layout_weight=".50"
+                    android:background="@mipmap/serch"
+                    android:foregroundGravity="center"
                     android:gravity="center"
-                    android:textColor="@color/colorMagentaNeon"
-                    />
-
-                <TextView
-                    android:id="@+id/friendsTopBar"
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_weight=".30"
-                    android:background="@drawable/home_top_nav_fields"
-                    android:text="@string/friendsTopBarText"
-                    android:textSize="24sp"
-                    android:gravity="center"
-                    android:textColor="@color/colorMagentaNeon"
-                    />
-
-
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".30">
+
+                <ImageView
+                    android:id="@+id/imagePerf2"
+                    android:layout_width="111dp"
+                    android:layout_height="108dp"
+                    android:layout_gravity="bottom|left"
+                    android:cropToPadding="false"
+                    android:foregroundGravity="left|bottom"
+                    android:padding="15dp"
+                    app:srcCompat="@drawable/circle_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
 
-        </androidx.appcompat.widget.Toolbar>
+                        <TextView
+                            android:id="@+id/idWelcome"
+                            style="@android:style/Widget.DeviceDefault.TextView"
+                            android:layout_width="221dp"
+                            android:layout_height="33dp"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/bungee_inline"
+                            android:gravity="left"
+                            android:text="Welcome"
+                            android:textColor="#FCFCFC"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/paranoiaCollapToolbar"
+                        <TextView
+                            android:id="@+id/idMyname"
+                            android:layout_width="171dp"
+                            android:layout_height="27dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="36dp"
+                            android:layout_marginBottom="36dp"
+                            android:fontFamily="serif"
+                            android:text="Invitado"
+                            android:textColor="#FCFCFC"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/idWelcome" />
+
+                        <TextView
+                            android:id="@+id/idMemberD"
+                            android:layout_width="203dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="9dp"
+                            android:fontFamily="serif"
+                            android:gravity="left"
+                            android:text="Member - 2019.10.10"
+                            android:textColor="#FCFCFC"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/idMyname"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/animation_view"
+                            android:layout_width="60dp"
+                            android:layout_height="64dp"
+
+
+                            android:layout_marginTop="32dp"
+                            android:layout_marginBottom="12dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.995"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/idWelcome"
+                            app:layout_constraintVertical_bias="0.636"
+                            app:lottie_autoPlay="true"
+                            app:lottie_imageAssetsFolder="assets"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/online"
+                            app:lottie_scale="0.1" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/blog_list"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="#18B8DB"
-            app:layout_scrollFlags="scroll|enterAlways"
-            >
+            android:layout_height="match_parent"
+            android:background="@mipmap/genback">
 
-            <ImageView
-                android:id="@+id/iconParanoia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginStart="42dp"
-                android:layout_marginTop="24dp"
-                android:layout_gravity="start" />
+        </androidx.recyclerview.widget.RecyclerView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="220dp"
-                android:layout_marginTop="15dp"
-                android:text="@string/userWelcome"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/idMyname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="200dp"
-                android:layout_marginTop="55dp"
-                android:textSize="26sp"
-                android:text="@string/blank"
-                android:textColor="@color/colorMagentaNeon" />
+    </LinearLayout>
 
 
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <include layout="@layout/content_main" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

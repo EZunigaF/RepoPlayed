@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.loginapp">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,33 +16,43 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
+            android:name=".TipsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".SplashActivity"
-            android:theme="@style/AppTheme.Splash"
-            >
-
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-        <activity
-            android:name=".LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
-        <activity
-            android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
 
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".Activities.Home"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activities.PostDetailActivity" />
+        <activity
+            android:name=".ChatActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".SearchActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

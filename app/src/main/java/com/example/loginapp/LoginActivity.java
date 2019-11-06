@@ -11,12 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.loginapp.utils.AppPreferences;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.j256.ormlite.stmt.query.In;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -76,7 +74,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                             finish();
                         }
                         else{

@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
-<item
-    android:id="@+id/btnSingOut"
-    android:title="@string/logoutTopMenu"
-    app:showAsAction="never"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/btnSingOut"
+        android:title="Logout"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/addPost"
+        android:title="Add Post"
+        android:icon="@mipmap/add"
+        app:showAsAction="always"
+        />
 
+    <item
+        android:id="@+id/messages"
+        android:title="Messages"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_search"/>
 
-
-    />
 </menu>

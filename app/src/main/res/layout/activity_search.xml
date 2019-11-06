@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity">
+
+    <TextView
+        android:id="@+id/search_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Posts"
+        android:textSize="36dp"
+        android:layout_margin="18dp"/>
+
+    <EditText
+        android:id="@+id/user_searched_post"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="75dp"
+        android:layout_marginLeft="18dp"
+        android:padding="12dp"
+        android:hint="Search here" />
+
+    <ImageButton
+        android:id="@+id/searchPostBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_searchpost"
+        android:background="@color/colorTransparent"
+        android:layout_marginStart="325dp"
+        android:layout_marginVertical="80dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/result_post"
+        android:layout_width="346dp"
+        android:layout_height="472dp"
+        android:layout_marginVertical="205dp"
+        android:layout_marginStart="35dp" />
+
+
+</RelativeLayout>

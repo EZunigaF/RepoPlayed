@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "974487096828",
-    "firebase_url": "https://playerrevie2.firebaseio.com",
-    "project_id": "playerrevie2",
-    "storage_bucket": "playerrevie2.appspot.com"
+    "project_number": "67064375259",
+    "firebase_url": "https://playerreview-15ca6.firebaseio.com",
+    "project_id": "playerreview-15ca6",
+    "storage_bucket": "playerreview-15ca6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:974487096828:android:ea5a1878d49b0937ab3679",
+        "mobilesdk_app_id": "1:67064375259:android:70ba13dacf1a9d8abe69fe",
         "android_client_info": {
           "package_name": "com.example.loginapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "974487096828-4tdrr4qe5skgeg481qpe16ug1vi9m5r2.apps.googleusercontent.com",
+          "client_id": "67064375259-ksl0s4hrf6cvjrluptuu0cpqfuddkdqv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.loginapp",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "974487096828-iu5eqt1d1d2pfqf8rbupqro627091mkn.apps.googleusercontent.com",
+          "client_id": "67064375259-llutt88i0ln0ih92pm3ffdu2aa33agc2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBF5J7VeKgnPw5mRq-YiHN_YuRRUGx3omY"
+          "current_key": "AIzaSyAVSAlPkwF0-XNnC_IBCXS2xeKf4fxm70g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "974487096828-iu5eqt1d1d2pfqf8rbupqro627091mkn.apps.googleusercontent.com",
+              "client_id": "67064375259-llutt88i0ln0ih92pm3ffdu2aa33agc2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

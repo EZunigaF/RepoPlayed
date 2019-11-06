@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Review Played</string>
-    <string name="title_activity_main">Home Welcome *MainActivity*</string>
+    <string name="app_name">LoginApp</string>
+    <string name="title_activity_main"> </string>
     <string name="PasswordHint">Password</string>
     <string name="EmailHint">Email</string>
     <string name="forgotPass">Forgot password?</string>
@@ -12,9 +12,29 @@
     <string name="registerUser">REGISTER</string>
     <string name="backToLogin">Alredy Member ?</string>
     <string name="userWelcome">Welcome User:</string>
-    <string name="homeTopBarText">HOME</string>
-    <string name="friendsTopBarText">FRIENDS</string>
-    <string name="postTopBarText">PLAY</string>
+    <string name="homeTopBarText">Chats</string>
+    <string name="friendsTopBarText">Friends</string>
+    <string name="postTopBarText">Yotube</string>
     <string name="blank" />
     <string name="logoutTopMenu">Log out</string>
+
+    <string name="title_activity_home">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="numbers">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+    </string-array>
+
 </resources>

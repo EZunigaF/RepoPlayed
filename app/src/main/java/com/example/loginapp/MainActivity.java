@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.loginapp.utils.AppPreferences;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,25 +34,22 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        mTextViewData = (TextView) findViewById(R.id.idMyname );
+        mTextViewData = (TextView) findViewById(R.id.idMyname);
         mDataBase = FirebaseDatabase.getInstance().getReference();
-
 
         mDataBase.child("Users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-             if (dataSnapshot.exists()){
+                if (dataSnapshot.exists()) {
 
-                 String id = mAuth.getCurrentUser().getEmail();
+                    String id = mAuth.getCurrentUser().getEmail();
 
-                 mTextViewData.setText("Hola :"+id);
+                    mTextViewData.setText("Hola :" + id);
 
 
-
-             }
-             else {
-                 mTextViewData.setText("Hola Invitado");
-             }
+                } else {
+                    mTextViewData.setText("Hola Invitado");
+                }
             }
 
             @Override
@@ -59,11 +58,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        mAuth=FirebaseAuth.getInstance();
-
+        mAuth = FirebaseAuth.getInstance();
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

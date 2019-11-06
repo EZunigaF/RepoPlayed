@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TipsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/DescTitle"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:background="@color/Intro3"
+            android:ems="10"
+            android:hint="Title"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFF7F7"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toStartOf="@+id/post_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/DescFild"
+            android:layout_width="match_parent"
+            android:layout_height="131dp"
+            android:background="@color/Intro4"
+            android:ems="10"
+            android:hint="Description"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFF7F7"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="73dp" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="73dp" />
+
+        <ImageButton
+            android:id="@+id/imageSele"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+
+            android:background="@mipmap/login"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_up"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_horizontal"
+            android:foregroundGravity="top|right"
+            android:src="@drawable/add2"
+            app:backgroundTint="#6AFFFFFF"
+            app:fabCustomSize="@android:dimen/notification_large_icon_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.902"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.791"
+            app:maxImageSize="70dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

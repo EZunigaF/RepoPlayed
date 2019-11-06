@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/post_img"
+            android:layout_width="match_parent"
+            android:layout_height="291dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/degradados1" />
+
+
+        <TextView
+            android:id="@+id/post_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/post_img"
+            android:layout_marginBottom="0dp"
+            android:padding="15dp"
+            android:shadowColor="#6FEE17"
+            android:text="Desc"
+            android:background="@color/gameC2"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/post_text2"
+            android:layout_width="287dp"
+            android:layout_height="117dp"
+            android:layout_alignBottom="@id/post_img"
+            android:layout_marginBottom="0dp"
+            android:padding="15dp"
+            android:background="@color/gameC1"
+            android:text="Desc"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/post_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title_game"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="Title"
+            android:textAlignment="center"
+            android:textColor="#F7F7F7"
+            android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="36sp"
+            android:typeface="serif" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorWhite">#FFFFFF</color>
-    <color name="colorWhiteD5">#D5FFFFFF</color>
-    <color name="colorTransparent">#00FFFFFF</color>
-    <color name="colorMagentaNeon">#B8168D</color>
-    <color name="colorCyanNeon">#05D8FC</color>
-    <color name="login_borderColor">#125678</color>
-    <color name="black">#000000</color>
+    <color name="colorPrimary">#4FB1CC</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
 
+    <color name="colorWhite">#D5FFFF</color>
+    <color name="colorWhiteD5">#D5F5FF</color>
+    <color name="colorTransparent">#FFFFFF</color>
+    <color name="colorMagentaNeon">#EC3E79</color>
+    <color name="colorCyanNeon">#05D8FC</color>
+    <color name="colorCyanNeon2">#05D8FC</color>
+    <color name="login_borderColor">#125678</color>
+    <color name="black">#0C940A</color>
+
+    <color name="Intro1">#0C0B31</color>
+    <color name="Intro2">#0D0C2E</color>
+    <color name="Intro3">#0E0E24</color>
+
+    <color name="Intro4">#3A3A85</color>
+
+    <color name="gameC1">#3A3A85</color>
+    <color name="gameC2">#7878DA</color>
 </resources>

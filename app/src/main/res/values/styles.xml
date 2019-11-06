@@ -3,10 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorWhite</item>
-        <item name="colorPrimaryDark">@color/colorMagentaNeon</item>
-        <item name="colorAccent">@color/colorCyanNeon</item>
-        <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -16,23 +15,12 @@
 
 
 
-    <!-- Style to replace actionbar overflow icon. set item 'android:actionOverflowButtonStyle' in AppTheme -->
-    <style name="MyActionButtonOverflow" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
-    <item name="android:src">@drawable/top_navigation_icon_mini</item>
-    <item name="android:background">?android:attr/actionBarItemBackground</item>
-    <item name="android:contentDescription">"ReviewPlayed menu"</item>
-    </style>
-
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-
     <style name="AppTheme.Splash" parent="AppTheme.NoActionBar">
-        <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowBackground">@drawable/launch_screen</item>
-        <!--<itme name="android:windowBackground">@drawable/launch_screen</itme>-->
     </style>
-
 
 </resources>
