@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -118,9 +119,12 @@ public class HomeActivity extends AppCompatActivity {
         logoutTopBar = findViewById(R.id.logoutTopBar_Home);
         postTopBar = findViewById(R.id.postTopBar_Home);
         searchTopBar = findViewById(R.id.searchTopBar_Home);
+
         //Add Clicks
 
         checkUserStatus();
+        topBarListeners();
+
         mDataBase.child("Users").addValueEventListener(new ValueEventListener() {
             @SuppressLint("WrongViewCast")
             @Override
@@ -151,11 +155,10 @@ public class HomeActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             // Name, email address, and profile photo Url
-
             Uri photoUrl = user.getPhotoUrl();
             Glide.with(this).load(photoUrl).into(imgUser);
             String uid = user.getUid();
-            Toast.makeText(this, "METODO CHECK CORRECTO", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "METODO CHECK User CORRECTO", Toast.LENGTH_SHORT).show();
             //Picasso.with(context).load(photoUrl).into(img);
         } else {
             //Usuario no conectado, debe ser redirigido hacia el inicio
@@ -183,19 +186,10 @@ public class HomeActivity extends AppCompatActivity {
                 blogViewHolder.setCateg(blog.getCateg());
                 blogViewHolder.setConso(blog.getConso());
                 blogViewHolder.setImg(getApplicationContext(), blog.getimageUrl());
-
             }
         };
         mBlogList.setAdapter(firebaseRecyclerAdapter);
-
-
-
-
-
     }
-
-
-
 
     public static class BlogViewHolder extends RecyclerView.ViewHolder {
 
@@ -227,15 +221,35 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-    private void showMessage(String message) {
-
-        Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
-
-    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    public void topBarListeners(){
+        logoutTopBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HomeActivity.this, "Doing a button", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        searchTopBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, SearchActivity.class));
+            }
+        });
+
+        postTopBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, TipsActivity.class));
+            }
+        });
+
+
     }
 
     @Override

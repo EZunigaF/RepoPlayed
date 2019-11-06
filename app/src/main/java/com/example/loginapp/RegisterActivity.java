@@ -188,24 +188,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         regBtn.setVisibility(View.INVISIBLE);
         loadingProgress.setVisibility(View.VISIBLE);
 
-
-
             mAuth.createUserWithEmailAndPassword(email,password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
 
-
                                 showMessage("Account created");
-
-
-
                                 updateUserInfo(name, pickedImgUri, mAuth.getCurrentUser());
-
-
-
-
                             }
                             else
                             {
@@ -219,20 +209,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         }
                     });
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // update user photo and name
     private void updateUserInfo(final String name, Uri pickedImgUri, final FirebaseUser currentUser) {
