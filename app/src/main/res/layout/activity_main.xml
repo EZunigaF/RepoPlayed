@@ -10,6 +10,26 @@
     tools:context=".LoginActivity"
     tools:visibility="visible">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="249dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#002D2F31"
+        android:drawableBottom="@android:color/background_dark"
+        android:ellipsize="middle"
+        android:shadowColor="#A9000000"
+        android:text=""
+        android:textAlignment="center"
+        android:textColorHint="#00FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.887" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -23,25 +43,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.891"
         app:srcCompat="@mipmap/botonb1" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation_view4"
-        android:layout_width="386dp"
-        android:layout_height="352dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-
-
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:lottie_autoPlay="true"
-        app:lottie_imageAssetsFolder="assets"
-
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/animaini"
-        app:lottie_scale="0.1" />
 
 
     <com.airbnb.lottie.LottieAnimationView
@@ -102,6 +103,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.603" />
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -169,38 +171,29 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/button2"
-        android:layout_width="224dp"
-        android:layout_height="61dp"
+        android:layout_width="215dp"
+        android:layout_height="46dp"
         android:layout_marginBottom="72dp"
         android:src="@drawable/image03"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.978" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="235dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="#002D2F31"
-        android:drawableBottom="@android:color/background_dark"
-        android:ellipsize="middle"
-        android:shadowColor="#A9000000"
-        android:text=""
-        android:textAlignment="center"
-        android:textColorHint="#00FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="313dp"
+        android:layout_height="22dp"
+        android:text="Remember username and password"
+        android:textColor="#FFFEFE"
+        android:textColorHint="#F12863"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.877" />
+        app:layout_constraintVertical_bias="0.661" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

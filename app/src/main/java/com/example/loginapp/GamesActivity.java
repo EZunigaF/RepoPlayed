@@ -32,7 +32,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TipsActivity extends AppCompatActivity {
+public class GamesActivity extends AppCompatActivity {
 
     ImageButton imageButtonAdd;
     FloatingActionButton buttonUp;
@@ -221,7 +221,7 @@ public class TipsActivity extends AppCompatActivity {
                     newPost.child("categ").setValue(catg_val);
                     newPost.child("conso").setValue(conso_val);
                     newPost.child("imageUrl").setValue(downloadUrl.toString());
-                    startActivity(new Intent(TipsActivity.this, HomeActivity.class));
+                    startActivity(new Intent(GamesActivity.this, HomeActivity.class));
                     finish();
 
                 }
@@ -233,17 +233,17 @@ public class TipsActivity extends AppCompatActivity {
     private void checkAndRequestForPermission() {
 
 
-        if (ContextCompat.checkSelfPermission(TipsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
+        if (ContextCompat.checkSelfPermission(GamesActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(TipsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(GamesActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
 
-                Toast.makeText(TipsActivity.this,"Please accept for required permission",Toast.LENGTH_SHORT).show();
+                Toast.makeText(GamesActivity.this,"Please accept for required permission",Toast.LENGTH_SHORT).show();
 
             }
 
             else
             {
-                ActivityCompat.requestPermissions(TipsActivity.this,
+                ActivityCompat.requestPermissions(GamesActivity.this,
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                         PReqCode);
             }

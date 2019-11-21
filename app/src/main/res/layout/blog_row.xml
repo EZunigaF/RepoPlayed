@@ -26,21 +26,11 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/post_img"
             android:layout_marginBottom="0dp"
+
+
+
             android:padding="15dp"
             android:shadowColor="#6FEE17"
-            android:text="Desc"
-            android:background="@color/gameC2"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/post_text2"
-            android:layout_width="287dp"
-            android:layout_height="117dp"
-            android:layout_alignBottom="@id/post_img"
-            android:layout_marginBottom="0dp"
-            android:padding="15dp"
-            android:background="@color/gameC1"
             android:text="Desc"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />

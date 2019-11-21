@@ -3,42 +3,28 @@ package com.example.loginapp;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.Transformation;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.example.loginapp.Fragments.HomeFragment;
 import com.example.loginapp.utils.AppPreferences;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -49,9 +35,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -87,10 +70,13 @@ public class HomeActivity extends AppCompatActivity {
 
 
         TextView textView = (TextView) findViewById(R.id.idMyname);
+        TextView textView2 = (TextView) findViewById(R.id.idMemberD);
+
+
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Gameplay.ttf");
         textView.setTypeface(typeface);
 
-        TextView textView2 = (TextView) findViewById(R.id.idMemberD);
+
         textView2.setTypeface(typeface);
 
 
@@ -183,8 +169,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             protected void populateViewHolder(BlogViewHolder blogViewHolder, Blog blog, int i) {
                 blogViewHolder.setTitle(blog.getTitle());
-                blogViewHolder.setCateg(blog.getCateg());
-                blogViewHolder.setConso(blog.getConso());
+                blogViewHolder.setDesc(blog.getDesc());
                 blogViewHolder.setImg(getApplicationContext(), blog.getimageUrl());
             }
         };
@@ -205,14 +190,11 @@ public class HomeActivity extends AppCompatActivity {
             TextView post_title = (TextView) mView.findViewById(R.id.post_title);
             post_title.setText(title);
 
+
         }
-        public void setConso(String conso){
-            TextView post_conso = (TextView) mView.findViewById(R.id.post_text);
-            post_conso.setText(conso);
-        }
-        public void setCateg(String categ){
-            TextView post_categ = (TextView) mView.findViewById(R.id.post_text2);
-            post_categ.setText(categ);
+        public void setDesc(String Desc){
+            TextView post_desc = (TextView) mView.findViewById(R.id.post_text);
+            post_desc.setText(Desc);
         }
         public void setImg(Context ctx, String imgae){
             ImageView    post_image= (ImageView) mView.findViewById(R.id.post_img);
@@ -245,7 +227,7 @@ public class HomeActivity extends AppCompatActivity {
         postTopBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, TipsActivity.class));
+                startActivity(new Intent(HomeActivity.this, GamesActivity.class));
             }
         });
 
@@ -271,7 +253,7 @@ public class HomeActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
 
             case R.id.addPost:
-                startActivity(new Intent(HomeActivity.this, TipsActivity.class));
+                startActivity(new Intent(HomeActivity.this, GamesActivity.class));
                 return super.onOptionsItemSelected(item);
 
             case R.id.messages:
@@ -280,5 +262,6 @@ public class HomeActivity extends AppCompatActivity {
         }
 
     }
+
 
 }

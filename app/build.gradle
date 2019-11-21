@@ -53,6 +53,7 @@ dependencies {
 
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
 
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
 }
 apply plugin: 'com.android.application'
 

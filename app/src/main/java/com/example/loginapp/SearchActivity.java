@@ -61,7 +61,7 @@ public class SearchActivity extends AppCompatActivity {
 
         Toast.makeText(this, "SEARCHED", Toast.LENGTH_SHORT).show();
 
-        Query firebaseSearchQueryBlog = mPostReference.orderByChild("categ").startAt(searchText).endAt(searchText + "\uf8ff");
+        Query firebaseSearchQueryBlog = mPostReference.orderByChild("title").startAt(searchText).endAt(searchText + "\uf8ff");
 
         FirebaseRecyclerAdapter<Blog, BlogViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Blog, BlogViewHolder>(
                 Blog.class,

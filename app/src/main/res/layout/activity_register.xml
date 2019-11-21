@@ -12,14 +12,16 @@
     android:orientation="vertical"
     tools:context=".RegisterActivity">
 
-    <ImageView
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/regUserPhoto"
-        android:layout_width="203dp"
-        android:layout_height="220dp"
-        android:maxHeight="20dp"
-        android:paddingTop="25dp"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/circle_bg" />
+        android:layout_width="207dp"
+        android:layout_height="205dp"
+        android:background="@drawable/circle_bg"
+        android:padding="5dp"
+        android:paddingLeft="10dp"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ly_txt_name"
