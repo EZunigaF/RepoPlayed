@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/genback"
+    tools:context=".BlogPageActivity">
+
+
+    <!--   TODO>>> Vista ScrollView, permite un scroll para todos los elementos en pantalla
+        Es requerido un TableLayout o cualquier otro layout. (EL MIO ES EL RELATIVE, puedes usar el Constraint tambien -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--  TODO>>>>  TABLE LAYOUT (Contiene TEXTS IMAGES Y ELEMENTOS del BlogPageActivity-->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="1">
+
+            <!--  TODO Relative que use para acomodar la informacion del Blog -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <ImageView
+                    android:id="@+id/blogPage_ImageBlog"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@drawable/logo_neon_rp" />
+
+                <View
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/Intro1"/>
+
+                <ImageButton
+                    android:id="@+id/button_goBack"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/button_goback"/>
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="275dp"
+                    android:text="Título Blog:"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorCyanNeon"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/post_detail_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="105dp"
+                    android:layout_marginTop="280dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="TITLE POST"
+                    android:textColor="@android:color/white"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="9dp"
+                    android:layout_marginTop="365dp"
+                    android:background="@color/colorMagentaNeon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="380dp"
+                    android:text="Descripción Blog:"
+                    android:textColor="@color/colorCyanNeon"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/post_detail_descrip"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginTop="420dp"
+                    android:background="@drawable/register_borders"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Descripcion del Blog"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="9dp"
+                    android:layout_marginTop="565dp"
+                    android:background="@color/colorCyanNeon" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="590dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="52dp"
+                            android:text="Category:"
+                            android:textColor="@color/colorMagentaNeon"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/post_detail_category"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="35dp"
+                            android:lineSpacingExtra="4dp"
+                            android:text="Category POST"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="55dp"
+                            android:text="Console:"
+                            android:textColor="@color/colorMagentaNeon"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/post_detail_console"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="35dp"
+                            android:lineSpacingExtra="4dp"
+                            android:text="Console POST"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="235dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="570dp"
+                    android:background="@color/colorCyanNeon" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="9dp"
+                    android:layout_marginTop="800dp"
+                    android:background="@color/colorCyanNeon" />
+
+            </RelativeLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout>
+                <!--TODO Constraint Layout o Cualquier Layout para trabajar-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </TableLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

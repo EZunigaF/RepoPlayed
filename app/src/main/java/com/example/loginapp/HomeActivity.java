@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.loginapp.Adapters.MyApplication;
 import com.example.loginapp.utils.AppPreferences;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -168,6 +169,7 @@ public class HomeActivity extends AppCompatActivity {
         ) {
             @Override
             protected void populateViewHolder(BlogViewHolder blogViewHolder, Blog blog, int i) {
+                blogViewHolder.setBlog(blog);
                 blogViewHolder.setTitle(blog.getTitle());
                 blogViewHolder.setDesc(blog.getDesc());
                 blogViewHolder.setImg(getApplicationContext(), blog.getimageUrl());
@@ -176,30 +178,63 @@ public class HomeActivity extends AppCompatActivity {
         mBlogList.setAdapter(firebaseRecyclerAdapter);
     }
 
-    public static class BlogViewHolder extends RecyclerView.ViewHolder {
+    public static class BlogViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
+        //Variables de los Blogs ubicados en el RecyclerView del HomeActivity (Titulo, Descripcion, Categoria y Imagen)
         View mView;
+        TextView post_title;
+        TextView post_desc,post_conso,post_categ;
+        ImageView post_image;
+        Blog blogAux;
 
         public BlogViewHolder(@NonNull View itemView) {
             super(itemView);
             mView = itemView;
         }
 
+        public void setConso(String conso){
+            post_conso = (TextView) mView.findViewById(R.id.post_text);
+            post_conso.setText(conso);
+            post_conso.setOnClickListener(this);
+        }
+        public void setCateg(String categ){
+            post_categ = (TextView) mView.findViewById(R.id.post_text);
+            post_categ.setText(categ);
+        }
+
 
         public  void setTitle(String title){
-            TextView post_title = (TextView) mView.findViewById(R.id.post_title);
+            post_title = (TextView) mView.findViewById(R.id.post_title);
             post_title.setText(title);
-
+            post_title.setOnClickListener(this);
 
         }
         public void setDesc(String Desc){
-            TextView post_desc = (TextView) mView.findViewById(R.id.post_text);
+            post_desc = (TextView) mView.findViewById(R.id.post_text);
             post_desc.setText(Desc);
+            post_desc.setOnClickListener(this);
         }
         public void setImg(Context ctx, String imgae){
-            ImageView    post_image= (ImageView) mView.findViewById(R.id.post_img);
+            post_image= (ImageView) mView.findViewById(R.id.post_img);
             Picasso.with(ctx).load(imgae).into(post_image);
+            post_image.setOnClickListener(this);
+        }
 
+        public void setBlog(Blog blog){
+            blogAux = blog;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(MyApplication.getAppContext(), "Checkout this Blog!", Toast.LENGTH_SHORT).show();
+            Intent BlogPage = new Intent(MyApplication.getAppContext(), BlogPageActivity.class);
+            BlogPage.putExtra("title",blogAux.getTitle());
+            BlogPage.putExtra("console", blogAux.getConso());
+            BlogPage.putExtra("descrip", blogAux.getDesc());
+            BlogPage.putExtra("category", blogAux.getCateg());
+            BlogPage.putExtra("imageurl", blogAux.getimageUrl());
+
+            MyApplication.getAppContext().startActivity(BlogPage);
         }
     }
 

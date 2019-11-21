@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="colorWhite">#D5FFFF</color>
+    <color name="colorWhite">#FFFFFF</color>
     <color name="colorWhiteD5">#D5F5FF</color>
     <color name="colorTransparent">#FFFFFF</color>
     <color name="colorMagentaNeon">#EC3E79</color>
@@ -12,6 +12,7 @@
     <color name="colorCyanNeon2">#05D8FC</color>
     <color name="login_borderColor">#125678</color>
     <color name="black">#0C940A</color>
+    <color name="colorBlack">#000000</color>
 
     <color name="Intro1">#0C0B31</color>
     <color name="Intro2">#0D0C2E</color>

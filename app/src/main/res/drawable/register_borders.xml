@@ -4,7 +4,7 @@
         android:width="3dp"
         android:color="@color/colorMagentaNeon" />
     <solid
-        android:color="#D9FFFFFF"
+        android:color="#E6FFFFFF"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"/>
     <padding
@@ -13,6 +13,6 @@
         android:right="10dp"
         android:bottom="10dp" />
     <corners
-        android:radius="3dp">
+        android:radius="6dp">
     </corners>
 </shape>

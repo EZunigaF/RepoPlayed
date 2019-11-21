@@ -12,7 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
-        android:text="Search Posts"
+        android:text="Buscar Blogs"
+        android:textStyle="bold"
+        android:textColor="@color/colorCyanNeon"
         android:textSize="36dp" />
 
     <EditText
@@ -21,27 +23,28 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="75dp"
         android:layout_marginLeft="18dp"
-        android:hint="Search here"
+        android:hint="Buscar el blog aquí!"
+        android:background="@drawable/register_borders"
+        android:textColorHint="@color/colorBlack"
+        android:textColor="@color/Intro1"
+        android:maxLines="1"
         android:padding="12dp" />
 
     <ImageButton
         android:id="@+id/searchPostBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="80dp"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginVertical="79dp"
         android:layout_marginStart="325dp"
-        android:background="@color/colorTransparent"
-        app:srcCompat="@drawable/ic_searchpost" />
+        android:background="@drawable/button_search_blog" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/result_post"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginVertical="205dp"
-        android:layout_marginTop="336dp"
-        android:layout_marginBottom="336dp" />
+        android:layout_marginHorizontal="45dp"
+        android:layout_marginTop="200dp"
+        />
 
 
 </RelativeLayout>
