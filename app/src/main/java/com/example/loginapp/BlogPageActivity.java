@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.loginapp.Adapters.MyApplication;
+import com.koushikdutta.ion.Ion;
 import com.squareup.picasso.Picasso;
 
 
@@ -44,10 +45,11 @@ public class BlogPageActivity extends AppCompatActivity {
             BlogPageCategory.setText(BlogPage.getStringExtra("category"));
             BlogPageConsole.setText(BlogPage.getStringExtra("console"));
             BlogPageImageURL = (BlogPage.getStringExtra("imageurl"));
-            Picasso.with(MyApplication.getAppContext())
-                    .load(BlogPageImageURL)
+            Ion.with(BlogPageImage)
+                    .centerCrop(
 
-                    .into(BlogPageImage);
+                    )
+                    .load(BlogPage.getStringExtra("imageurl"));
         }
 
         goBack.setOnClickListener(new View.OnClickListener() {

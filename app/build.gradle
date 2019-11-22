@@ -12,6 +12,11 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    ///STEP
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -49,6 +54,7 @@ dependencies {
 
 
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation  'com.koushikdutta.ion:ion:3.0.8'
 
 
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'

@@ -21,7 +21,7 @@
         android:layout_marginStart="150dp"/>
 
     <TextView
-        android:id="@+id/id_post"
+        android:id="@+id/title_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID:"
