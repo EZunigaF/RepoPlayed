@@ -234,6 +234,10 @@ public class HomeActivity extends AppCompatActivity {
             BlogPage.putExtra("category", blogAux.getCateg());
             BlogPage.putExtra("imageurl", blogAux.getimageUrl());
 
+            //ERROR NOVIEMBRE 21    Calling startActivity() from outside of an Activity
+            BlogPage.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            //End
+
             MyApplication.getAppContext().startActivity(BlogPage);
         }
     }
