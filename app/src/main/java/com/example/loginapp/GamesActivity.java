@@ -23,6 +23,8 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -48,6 +50,7 @@ public class GamesActivity extends AppCompatActivity {
     private EditText title;
     private EditText desc;
     private EditText categ;
+    private Boolean imageUploaded;
 
      Button mSubmit;
 
@@ -67,6 +70,8 @@ public class GamesActivity extends AppCompatActivity {
         title = (EditText) findViewById(R.id.DescTitle);
         desc = (EditText) findViewById(R.id.DescFild) ;
         categ = (EditText) findViewById(R.id.DescFild) ;
+        
+        imageUploaded = false;
 
 
         mProgress = new ProgressDialog(this);
@@ -134,13 +139,9 @@ public class GamesActivity extends AppCompatActivity {
                     public void onClick(View view) {
 
                             Log.println(Log.ERROR,"mas ","malo ");
-                            starPosting();
-
-
-
-
-
-
+                            if (imageUploaded){
+                                starPosting();    
+                            }
                     }
                 });
 
@@ -188,24 +189,25 @@ public class GamesActivity extends AppCompatActivity {
         final String desc_val  = desc.getText().toString().trim();
         final String catg_val = spinner1.getSelectedItem().toString();
         final String conso_val = spinnerC.getSelectedItem().toString();
+        
+        
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final String creator = user.getUid();
+        
+        
 
 
 
 
-        if (title ==null && desc==null && pickedImgUri == null&& spinner1 == null && spinnerC == null){
-
-
-            Log.println(Log.ERROR,"Error","La informacion esta vacia");
-
-
-
+        if (title ==null && desc==null && pickedImgUri == null&& spinner1 == null && spinnerC == null ){
+            if(title.equals("") || desc.equals("") || pickedImgUri.equals("") || spinner1.equals("") || spinnerC.equals("")){
+                Log.println(Log.ERROR,"Error","La informacion esta vacia");
+                Toast.makeText(this, "INFO VACIA", Toast.LENGTH_SHORT).show();
+            }
         }
         else
         {
-
-
             StorageReference filepath = mStorage.child("Blog_img").child(pickedImgUri.getLastPathSegment());
-
             filepath.putFile(pickedImgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
 
                 @Override
@@ -221,6 +223,8 @@ public class GamesActivity extends AppCompatActivity {
                     newPost.child("categ").setValue(catg_val);
                     newPost.child("conso").setValue(conso_val);
                     newPost.child("imageUrl").setValue(downloadUrl.toString());
+                    newPost.child("creator").setValue(creator);
+                    imageUploaded = false;
                     startActivity(new Intent(GamesActivity.this, HomeActivity.class));
                     finish();
 
@@ -265,6 +269,7 @@ public class GamesActivity extends AppCompatActivity {
             // we need to save its reference to a Uri variable
             pickedImgUri = data.getData() ;
             imageButtonAdd.setImageURI(pickedImgUri);
+            imageUploaded = true;
 
 
         }
