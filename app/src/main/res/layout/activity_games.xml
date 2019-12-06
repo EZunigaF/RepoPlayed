@@ -72,7 +72,7 @@
             android:background="@color/colorMagentaNeon" />
 
         <ImageButton
-            android:id="@+id/imageSele"
+            android:id="@+id/imageSelectedBlog"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"

@@ -5,7 +5,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -38,11 +37,11 @@ public class GamesActivity extends AppCompatActivity {
 
     ImageButton imageButtonAdd;
     FloatingActionButton buttonUp;
-    Spinner spinner1,spinnerC;
-   private Uri pickedImgUri = null;
-    private static final int Gallery_request =1;
-    static int PReqCode = 1 ;
-    static int REQUESCODE = 1 ;
+    Spinner spinner1, spinnerC;
+    private Uri pickedImgUri = null;
+    private static final int Gallery_request = 1;
+    static int PReqCode = 1;
+    static int REQUESCODE = 1;
 
     private DatabaseReference mDatabase;
     private StorageReference mStorage;
@@ -52,7 +51,7 @@ public class GamesActivity extends AppCompatActivity {
     private EditText categ;
     private Boolean imageUploaded;
 
-     Button mSubmit;
+    Button mSubmit;
 
     private ProgressDialog mProgress;
 
@@ -64,13 +63,13 @@ public class GamesActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Blog");
 
         setContentView(R.layout.activity_games);
-        imageButtonAdd = (ImageButton) findViewById(R.id.imageSele);
+        imageButtonAdd = (ImageButton) findViewById(R.id.imageSelectedBlog);
         buttonUp = (FloatingActionButton) findViewById(R.id.btn_up);
 
         title = (EditText) findViewById(R.id.DescTitle);
-        desc = (EditText) findViewById(R.id.DescFild) ;
-        categ = (EditText) findViewById(R.id.DescFild) ;
-        
+        desc = (EditText) findViewById(R.id.DescFild);
+        categ = (EditText) findViewById(R.id.DescFild);
+
         imageUploaded = false;
 
 
@@ -124,60 +123,25 @@ public class GamesActivity extends AppCompatActivity {
         spinnerC.setAdapter(adapter2);
 
 
-
         imageButtonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent galeryIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                galeryIntent.setType("image/");
-                startActivityForResult(galeryIntent, Gallery_request);
 
-                buttonUp = findViewById(R.id.btn_up);
-
-                buttonUp.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                            Log.println(Log.ERROR,"mas ","malo ");
-                            if (imageUploaded){
-                                starPosting();    
-                            }
-                    }
-                });
-
-                imageButtonAdd = findViewById(R.id.imageSele) ;
-
-                imageButtonAdd.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        if (Build.VERSION.SDK_INT >= 22) {
-
-                            checkAndRequestForPermission();
-
-
-                        }
-                        else
-                        {
-                            openGallery();
-                        }
-
-
-
-
-
-                    }
-                });
-
+                checkAndRequestForPermission();
 
             }
-
-
-
         });
 
+        buttonUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-
+                //Log.println(Log.ERROR,"mas ","malo ");
+                if (imageUploaded) {
+                    starPosting();
+                }
+            }
+        });
     }
 
     private void starPosting() {
@@ -186,27 +150,21 @@ public class GamesActivity extends AppCompatActivity {
         mProgress.show();
 
         final String title_val = title.getText().toString().trim();
-        final String desc_val  = desc.getText().toString().trim();
+        final String desc_val = desc.getText().toString().trim();
         final String catg_val = spinner1.getSelectedItem().toString();
         final String conso_val = spinnerC.getSelectedItem().toString();
-        
-        
+
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         final String creator = user.getUid();
-        
-        
 
 
-
-
-        if (title ==null && desc==null && pickedImgUri == null&& spinner1 == null && spinnerC == null ){
-            if(title.equals("") || desc.equals("") || pickedImgUri.equals("") || spinner1.equals("") || spinnerC.equals("")){
-                Log.println(Log.ERROR,"Error","La informacion esta vacia");
+        if (title == null && desc == null && pickedImgUri == null && spinner1 == null && spinnerC == null) {
+            if (title.equals("") || desc.equals("") || pickedImgUri.equals("") || spinner1.equals("") || spinnerC.equals("")) {
+                Log.println(Log.ERROR, "Error", "La informacion esta vacia");
                 Toast.makeText(this, "INFO VACIA", Toast.LENGTH_SHORT).show();
             }
-        }
-        else
-        {
+        } else {
             StorageReference filepath = mStorage.child("Blog_img").child(pickedImgUri.getLastPathSegment());
             filepath.putFile(pickedImgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
 
@@ -214,7 +172,7 @@ public class GamesActivity extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                     Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
-                    while (!urlTask.isSuccessful());
+                    while (!urlTask.isSuccessful()) ;
                     Uri downloadUrl = urlTask.getResult();
                     mProgress.dismiss();
                     DatabaseReference newPost = mDatabase.push();
@@ -231,31 +189,28 @@ public class GamesActivity extends AppCompatActivity {
                 }
             });
         }
-
-        }
+    }
 
     private void checkAndRequestForPermission() {
 
+        Toast.makeText(this, "Opened the gallery", Toast.LENGTH_SHORT).show();
 
-        if (ContextCompat.checkSelfPermission(GamesActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(GamesActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(GamesActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
 
-                Toast.makeText(GamesActivity.this,"Please accept for required permission",Toast.LENGTH_SHORT).show();
+                Toast.makeText(GamesActivity.this, "Please accept for required permission", Toast.LENGTH_SHORT).show();
+                ActivityCompat.requestPermissions(GamesActivity.this,
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                        PReqCode);
 
-            }
 
-            else
-            {
+            } else {
                 ActivityCompat.requestPermissions(GamesActivity.this,
                         new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                         PReqCode);
             }
-
-        }
-        else
+        } else
             openGallery();
-
     }
 
 
@@ -263,26 +218,25 @@ public class GamesActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null ) {
+        if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null) {
 
             // the user has successfully picked an image
             // we need to save its reference to a Uri variable
-            pickedImgUri = data.getData() ;
+            pickedImgUri = data.getData();
             imageButtonAdd.setImageURI(pickedImgUri);
             imageUploaded = true;
 
 
         }
-
-
-}
+    }
 
     private void openGallery() {
         //TODO: open gallery intent and wait for user to pick an image !
-
         Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
         galleryIntent.setType("image/*");
-        startActivityForResult(galleryIntent,REQUESCODE);
+        startActivityForResult(galleryIntent, REQUESCODE);
+
+
     }
 
 
