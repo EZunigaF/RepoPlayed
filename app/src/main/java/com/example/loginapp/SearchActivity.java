@@ -20,6 +20,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.loginapp.Adapters.MyApplication;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -32,6 +34,7 @@ public class SearchActivity extends AppCompatActivity {
     private RecyclerView mResultList;
     private TextWatcher mSearchWatcher = null;
     private DatabaseReference mPostReference;
+    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
 
 
@@ -101,6 +104,8 @@ public class SearchActivity extends AppCompatActivity {
     private void firebaseSearch(String searchText) {
 
         Query firebaseSearchQueryBlog = mPostReference.orderByChild("title").startAt(searchText).endAt(searchText + "\uf8ff");
+        Query admins = mPostReference.orderByChild("creator").equalTo(user.getUid());
+
 
         FirebaseRecyclerAdapter<Blog, BlogViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Blog, BlogViewHolder>(
                 Blog.class,

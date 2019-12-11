@@ -68,37 +68,23 @@ public class HomeActivity extends AppCompatActivity {
         mBlogList.setLayoutManager(new LinearLayoutManager(this));
         databaseReference2 = FirebaseDatabase.getInstance().getReference();
         imgUser = findViewById(R.id.imagePerf2);
-
-
         TextView textView = (TextView) findViewById(R.id.idMyname);
         TextView textView2 = (TextView) findViewById(R.id.idMemberD);
-
-
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Gameplay.ttf");
         textView.setTypeface(typeface);
-
-
         textView2.setTypeface(typeface);
-
-
-
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
-
         mAuth=FirebaseAuth.getInstance();
-
         Toolbar toolbar = findViewById(R.id.toolbar);
-
         setSupportActionBar(toolbar);
 
         mTextViewData = (TextView) findViewById(R.id.idMyname);
-
         mDataBase = FirebaseDatabase.getInstance().getReference();
         mDataBase2 = FirebaseDatabase.getInstance().getReference().child("Blog");
 
         StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-
         StorageReference photoReference= storageReference.child("users_photo/");
 
 
@@ -108,7 +94,6 @@ public class HomeActivity extends AppCompatActivity {
         searchTopBar = findViewById(R.id.searchTopBar_Home);
 
         //Add Clicks
-
         checkUserStatus();
         topBarListeners();
 
@@ -145,7 +130,7 @@ public class HomeActivity extends AppCompatActivity {
             Uri photoUrl = user.getPhotoUrl();
             Glide.with(this).load(photoUrl).into(imgUser);
             String uid = user.getUid();
-            Toast.makeText(this, "METODO CHECK User CORRECTO", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "METODO CHECK >>"+user.getEmail(), Toast.LENGTH_SHORT).show();
             //Picasso.with(context).load(photoUrl).into(img);
         } else {
             //Usuario no conectado, debe ser redirigido hacia el inicio
@@ -154,7 +139,6 @@ public class HomeActivity extends AppCompatActivity {
         }
 
     }
-
 
     @Override
     protected void onStart() {

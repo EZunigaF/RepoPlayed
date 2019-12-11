@@ -10,7 +10,6 @@
 
     <LinearLayout
 
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -18,9 +17,7 @@
         <com.google.android.material.appbar.AppBarLayout
 
             android:layout_width="match_parent"
-            android:layout_height="222dp"
-
-
+            android:layout_height="250dp"
             android:background="@mipmap/rect2"
             android:hapticFeedbackEnabled="true"
             android:theme="@style/AppTheme.AppBarOverlay"
@@ -28,7 +25,6 @@
 
 
             <androidx.appcompat.widget.Toolbar
-
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
@@ -71,7 +67,6 @@
                     android:textSize="24sp" />
 
 
-
                 <ImageButton
                     android:id="@+id/searchTopBar_Home"
                     android:layout_width="26dp"
@@ -86,112 +81,82 @@
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
+
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight=".30">
 
-
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imagePerf2"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
+                    android:layout_width="126dp"
+                    android:layout_height="126dp"
+                    android:layout_marginStart="15dp"
                     android:padding="5dp"
                     android:paddingLeft="10dp"
                     android:src="@drawable/circle_bg"
                     app:civ_border_color="#FF000000"
                     app:civ_border_width="2dp" />
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/idWelcome"
+                        style="@android:style/Widget.DeviceDefault.TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="65dp"
+                        android:fontFamily="@font/bungee_inline"
+                        android:text="Welcome"
+                        android:textColor="#FCFCFC"
+                        android:textSize="26sp" />
+
+                    <TextView
+                        android:id="@+id/idMyname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="serif"
+                        android:text="Invitado(check)"
+                        android:textColor="@color/colorCyanNeon"
+
+                        android:textSize="22sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/idMemberD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="88dp"
+                        android:fontFamily="serif"
+                        android:text="Member - 2019.10.10"
+                        android:textColor="@color/colorMagentaNeon"
+                        android:textSize="18sp" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animation_view"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_imageAssetsFolder="assets"
+                        app:lottie_loop="false"
+                        app:lottie_rawRes="@raw/online"
+                        app:lottie_scale="0.8" />
 
 
-                        <TextView
-                            android:id="@+id/idWelcome"
-                            style="@android:style/Widget.DeviceDefault.TextView"
-                            android:layout_width="203dp"
-                            android:layout_height="25dp"
-                            android:layout_gravity="left"
-                            android:fontFamily="@font/bungee_inline"
-                            android:gravity="left"
-                            android:text="Welcome"
-                            android:textColor="#FCFCFC"
-                            android:textSize="24sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="1.0"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <TextView
-                            android:id="@+id/idMyname"
-                            android:layout_width="171dp"
-                            android:layout_height="27dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="36dp"
-                            android:layout_marginBottom="36dp"
-                            android:fontFamily="serif"
-                            android:paddingLeft="10dp"
-                            android:text="Invitado"
-                            android:textColor="#FCFCFC"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/idWelcome" />
-
-                        <TextView
-                            android:id="@+id/idMemberD"
-                            android:layout_width="203dp"
-                            android:layout_height="28dp"
-                            android:layout_gravity="left"
-                            android:layout_marginTop="9dp"
-                            android:fontFamily="serif"
-                            android:gravity="left"
-                            android:paddingLeft="10dp"
-                            android:text="Member - 2019.10.10"
-                            android:textColor="#FCFCFC"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/idMyname"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/animation_view"
-                            android:layout_width="60dp"
-                            android:layout_height="64dp"
-
-
-                            android:layout_marginTop="32dp"
-                            android:layout_marginBottom="12dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.995"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/idWelcome"
-                            app:layout_constraintVertical_bias="0.636"
-                            app:lottie_autoPlay="true"
-                            app:lottie_imageAssetsFolder="assets"
-                            app:lottie_loop="true"
-                            app:lottie_rawRes="@raw/online"
-                            app:lottie_scale="0.1" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
+                </RelativeLayout>
 
             </LinearLayout>
 
