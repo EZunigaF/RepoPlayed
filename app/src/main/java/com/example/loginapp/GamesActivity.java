@@ -157,6 +157,7 @@ public class GamesActivity extends AppCompatActivity {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         final String creator = user.getUid();
+        user.getDisplayName();
 
 
         if (title == null && desc == null && pickedImgUri == null && spinner1 == null && spinnerC == null) {

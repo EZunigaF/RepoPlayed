@@ -3,15 +3,16 @@ package com.example.loginapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.loginapp.Adapters.MyApplication;
+
+
+import com.google.firebase.database.DatabaseReference;
 import com.koushikdutta.ion.Ion;
-import com.squareup.picasso.Picasso;
 
 
 public class BlogPageActivity extends AppCompatActivity {
@@ -23,8 +24,9 @@ public class BlogPageActivity extends AppCompatActivity {
     String BlogPageImageURL;
     ImageView BlogPageImage;
     ImageButton goBack;
-
-
+    private String currentUser;
+    DatabaseReference BLOG;
+    DatabaseReference creator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +60,14 @@ public class BlogPageActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
 
-
-
-
+    public void givingAdmin(String currentUser){
+        String creatorBlog;
+        Intent BlogPage = getIntent();
+        if(BlogPage != null){
+            creatorBlog = BlogPage.getStringExtra("creator");
+            Toast.makeText(this, "THE ADMIN IS>>>>>"+creatorBlog, Toast.LENGTH_SHORT).show();
+        }
     }
 }

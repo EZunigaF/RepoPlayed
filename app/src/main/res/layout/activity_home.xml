@@ -12,7 +12,8 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <com.google.android.material.appbar.AppBarLayout
 
@@ -21,32 +22,37 @@
             android:background="@mipmap/rect2"
             android:hapticFeedbackEnabled="true"
             android:theme="@style/AppTheme.AppBarOverlay"
-            app:expanded="false">
+            app:expanded="false"
+            >
 
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/Intro4"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                android:layout_height="12dp">
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/Intro4">
+
+                </View>
+
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
                 android:orientation="horizontal"
-                android:paddingRight="0dp">
+                >
 
                 <ImageButton
-                    android:id="@+id/logoutTopBar_Home"
+                    android:id="@+id/TopBar_Home"
                     android:layout_width="26dp"
                     android:layout_height="58dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight=".50"
-                    android:background="@mipmap/chats"
+                    android:background="@drawable/home_user_profile"
                     android:foregroundGravity="center"
                     android:gravity="center"
                     android:textColor="#FFFFFF"
@@ -58,7 +64,7 @@
                     android:layout_height="58dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="15dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="12dp"
                     android:layout_weight=".50"
                     android:background="@mipmap/you"
                     android:foregroundGravity="center"
@@ -86,7 +92,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="5dp" />
+                android:layout_height="3dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -97,6 +103,7 @@
                     android:id="@+id/imagePerf2"
                     android:layout_width="126dp"
                     android:layout_height="126dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginStart="15dp"
                     android:padding="5dp"
                     android:paddingLeft="10dp"
@@ -115,7 +122,7 @@
                         style="@android:style/Widget.DeviceDefault.TextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="65dp"
+                        android:layout_marginLeft="55dp"
                         android:fontFamily="@font/bungee_inline"
                         android:text="Welcome"
                         android:textColor="#FCFCFC"
@@ -125,21 +132,21 @@
                         android:id="@+id/idMyname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
+                        android:layout_marginTop="75dp"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="serif"
                         android:text="Invitado(check)"
                         android:textColor="@color/colorCyanNeon"
-
                         android:textSize="22sp"
+
                         />
 
                     <TextView
                         android:id="@+id/idMemberD"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="88dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="135dp"
                         android:fontFamily="serif"
                         android:text="Member - 2019.10.10"
                         android:textColor="@color/colorMagentaNeon"
@@ -149,11 +156,20 @@
                         android:id="@+id/animation_view"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
+                        android:layout_marginTop="15dp"
                         app:lottie_autoPlay="true"
                         app:lottie_imageAssetsFolder="assets"
                         app:lottie_loop="false"
                         app:lottie_rawRes="@raw/online"
                         app:lottie_scale="0.8" />
+
+                    <ImageButton
+                        android:id="@+id/btnShutOffTopBar_Home"
+                        android:layout_width="35dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="205dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/home_btnlogoff" />
 
 
                 </RelativeLayout>
