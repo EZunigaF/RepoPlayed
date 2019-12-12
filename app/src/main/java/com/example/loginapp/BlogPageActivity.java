@@ -62,12 +62,4 @@ public class BlogPageActivity extends AppCompatActivity {
         });
     }
 
-    public void givingAdmin(String currentUser){
-        String creatorBlog;
-        Intent BlogPage = getIntent();
-        if(BlogPage != null){
-            creatorBlog = BlogPage.getStringExtra("creator");
-            Toast.makeText(this, "THE ADMIN IS>>>>>"+creatorBlog, Toast.LENGTH_SHORT).show();
-        }
-    }
 }

@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.koushikdutta.ion.Ion;
 import com.squareup.picasso.Picasso;
 
 public class SearchActivity extends AppCompatActivity {
@@ -153,9 +154,9 @@ public class SearchActivity extends AppCompatActivity {
             blog_title.setOnClickListener(this);
         }
 
-        public void setImgBlog(Context ctx, String imgae){
+        public void setImgBlog(Context ctx, String image){
             blog_image= (ImageView) mPostView.findViewById(R.id.icon_result);
-            Picasso.with(ctx).load(imgae).into(blog_image);
+            Ion.with(blog_image).load(image);
             blog_image.setOnClickListener(this);
         }
 

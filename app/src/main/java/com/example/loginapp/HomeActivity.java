@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -26,7 +25,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.loginapp.Adapters.MyApplication;
-import com.example.loginapp.utils.AppPreferences;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -266,6 +264,14 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+
+        imgUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MyApplication.getAppContext(), MyBlogsActivity.class));
+            }
+        });
+
     }
 
     public void confirmarExit() {

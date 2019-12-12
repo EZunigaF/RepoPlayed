@@ -52,7 +52,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight=".50"
-                    android:background="@drawable/home_user_profile"
+                    android:background="@mipmap/chats"
                     android:foregroundGravity="center"
                     android:gravity="center"
                     android:textColor="#FFFFFF"

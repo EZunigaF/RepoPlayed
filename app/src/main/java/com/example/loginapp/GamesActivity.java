@@ -72,6 +72,8 @@ public class GamesActivity extends AppCompatActivity {
 
         imageUploaded = false;
 
+        listeners();
+
 
         mProgress = new ProgressDialog(this);
         List<String> spinnerArray = new ArrayList<String>();
@@ -123,25 +125,7 @@ public class GamesActivity extends AppCompatActivity {
         spinnerC.setAdapter(adapter2);
 
 
-        imageButtonAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                checkAndRequestForPermission();
-
-            }
-        });
-
-        buttonUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //Log.println(Log.ERROR,"mas ","malo ");
-                if (imageUploaded) {
-                    starPosting();
-                }
-            }
-        });
     }
 
     private void starPosting() {
@@ -236,6 +220,30 @@ public class GamesActivity extends AppCompatActivity {
         Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
         galleryIntent.setType("image/*");
         startActivityForResult(galleryIntent, REQUESCODE);
+
+
+    }
+
+    public void listeners(){
+        imageButtonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                checkAndRequestForPermission();
+
+            }
+        });
+
+        buttonUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //Log.println(Log.ERROR,"mas ","malo ");
+                if (imageUploaded) {
+                    starPosting();
+                }
+            }
+        });
 
 
     }

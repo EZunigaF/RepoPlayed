@@ -50,13 +50,11 @@
             android:fontFamily="@font/arbutus"
             android:hint="Description . . ."
             android:inputType="textPersonName"
+            android:maxLines="3"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFF7F7"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            android:textSize="24sp"/>
 
         <Spinner
             android:id="@+id/spinner1"
