@@ -10,11 +10,20 @@ public class Blog {
     private String creator;
 
 
+
     public Blog() {
 
     }
 
-    public Blog(String title, String Desc, String imageUrl, String conso,String categ,String creator) {
+    public Blog(String title, String Desc, String imageUrl, String conso,String categ) {
+        this.title = title;
+        this.Desc = Desc;
+        this.imageUrl = imageUrl;
+        this.conso = conso;
+        this.categ = categ;
+    }
+
+    public Blog(String title_val, String desc_val, String imageUpload, String consoDefuault, String categDefault, String creator) {
         this.title = title;
         this.Desc = Desc;
         this.imageUrl = imageUrl;
@@ -61,13 +70,5 @@ public class Blog {
 
     public void setimageUrl(String image) {
         this.imageUrl = image;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
     }
 }

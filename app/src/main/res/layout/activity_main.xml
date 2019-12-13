@@ -10,6 +10,8 @@
     tools:context=".LoginActivity"
     tools:visibility="visible">
 
+
+
     <Button
         android:id="@+id/button"
         android:layout_width="249dp"
@@ -27,6 +29,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
+
         app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
@@ -95,8 +98,9 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:textAlignment="center"
-        android:textColor="@color/colorBlack"
-        android:textColorHint="@color/colorBlack"
+        android:textColor="#FFFFFF"
+        android:text="Hotmail00"
+        android:textColorHint="#FFF7F7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.692"
@@ -117,6 +121,7 @@
         app:layout_constraintVertical_bias="0.013"
         app:srcCompat="@mipmap/logo" />
 
+    android:text=""
     <TextView
         android:id="@+id/go_to_register"
         style="@style/Widget.AppCompat.TextView.SpinnerItem"

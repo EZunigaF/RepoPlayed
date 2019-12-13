@@ -18,11 +18,7 @@
             android:layout_height="240dp"
             android:background="@color/Intro1"></View>
 
-        <View
-            android:layout_width="52dp"
-            android:layout_height="52dp"
-            android:layout_alignParentTop="true"
-            android:background="@color/colorMagentaNeon"/>
+
 
         <ImageButton
             android:id="@+id/editUserAction"
@@ -69,16 +65,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="9dp"
-                        android:text="Email:"
-                        android:textColor="@color/colorMagentaNeon"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:background="@color/colorBlack"/>
-
-                    <TextView
                         android:id="@+id/bioEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -95,16 +81,6 @@
                     android:layout_width="200dp"
                     android:layout_height="80dp"
                     android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/colorBlack"
-                        android:text="Username:"
-                        android:textAlignment="viewEnd"
-                        android:textColor="@color/colorMagentaNeon"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/bioDisplayName"

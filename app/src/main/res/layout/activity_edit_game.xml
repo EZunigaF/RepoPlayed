@@ -4,42 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditGame"
-    android:background="@drawable/register_background">
-
-
+    android:background="@color/Intro1"
+    tools:context=".EditGame">
 
 
     <ImageView
         android:id="@+id/imageUpdatedUpload"
+        android:layout_width="259dp"
+        android:layout_height="183dp"
         android:layout_centerHorizontal="true"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:padding="12px"
         android:background="@drawable/logo"
-        />
+        android:padding="12px" />
 
     <View
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:layout_alignParentTop="true"
-        android:background="@color/Intro1"/>
+        android:background="@color/Intro1" />
 
     <View
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:padding="15dp"
-        android:background="@color/Intro1"/>
+        android:background="@color/Intro1"
+        android:padding="15dp" />
 
     <ImageButton
         android:id="@+id/deleteBlogAction"
         android:layout_width="44dp"
         android:layout_height="44dp"
         android:layout_alignParentRight="true"
-        android:background="@drawable/remove"
-        />
+        android:background="@drawable/remove" />
 
     <ImageButton
         android:id="@+id/button_goBack"
@@ -49,35 +45,29 @@
         android:layout_marginTop="-2dp"
         android:background="@drawable/button_goback" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="9dp"
-        android:background="@color/colorMagentaNeon"
-        android:layout_marginTop="200dp"></View>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="220dp"
-        android:text="Title of the blog:"
-        android:paddingHorizontal="12dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorBlack"
         android:background="@color/colorWhite"
-        android:textSize="24dp" />
+        android:paddingHorizontal="12dp"
+        android:text="Title of the blog:"
+        android:textColor="@color/colorBlack"
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:text="Description of the blog:"
-        android:textSize="24dp"
-        android:textColor="@color/colorBlack"
-        android:textStyle="bold"
         android:layout_marginStart="50dp"
-        android:paddingHorizontal="12dp"
         android:layout_marginTop="340dp"
-        android:background="@color/colorWhite"/>
+        android:background="@color/colorWhite"
+        android:paddingHorizontal="12dp"
+        android:text="Description of the blog:"
+        android:textColor="@color/colorBlack"
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/updatedTitleField"
@@ -99,21 +89,21 @@
         android:id="@+id/saveUpdated"
         android:layout_width="350px"
         android:layout_height="45dp"
-        android:layout_marginTop="620dp"
         android:layout_marginStart="245dp"
+        android:layout_marginTop="620dp"
         android:background="@drawable/register_button_style"
         android:text="Save"
-        android:textColor="@color/colorMagentaNeon"/>
+        android:textColor="@color/colorMagentaNeon" />
 
     <Button
         android:id="@+id/cancelUpdate"
         android:layout_width="350px"
         android:layout_height="45dp"
-        android:layout_marginTop="620dp"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="620dp"
         android:background="@drawable/register_button_style"
-        android:textColor="@color/Intro4"
-        android:text="Cancel "/>
+        android:text="Cancel "
+        android:textColor="@color/Intro4" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -131,20 +121,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="45dp"
                 android:background="@color/white"
                 android:text="Console:"
                 android:textColor="@color/colorMagentaNeon"
                 android:textSize="20sp"
-                android:layout_marginHorizontal="45dp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/bioConsoleGame"
                 android:layout_width="155dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="-2dp"
                 android:background="@drawable/blog_edit_style_text"
                 android:lineSpacingExtra="4dp"
-                android:layout_marginStart="-2dp"
                 android:text="Console"
                 android:textColor="@color/black"
                 android:textSize="24sp"
@@ -159,27 +149,26 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
                 android:background="@color/colorWhite"
                 android:text="Category:"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/colorMagentaNeon"
                 android:textSize="20sp"
-                android:layout_marginHorizontal="40dp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/bioCategoryGame"
                 android:layout_width="155dp"
-                android:layout_marginStart="2dp"
                 android:layout_height="wrap_content"
-                android:text="Category"
+                android:layout_marginStart="2dp"
                 android:background="@drawable/blog_edit_style_text"
+                android:text="Category"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
-
 
 
     <!--    g(String title, String Desc, String imageUrl, String conso,String categ) {-->

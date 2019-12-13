@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher, Com
     private EditText txtEmail;
     private EditText txtPassword;
     private ProgressDialog mProgress;
+    private ImageButton logoutTopBar;
     //--------------------------------------------Preferencias-----------------------//
     private EditText etUsername, etPass;
     private TextView forgotPass;
@@ -111,6 +112,8 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher, Com
 
 
                 }
+
+
         }
 
     private void makeForgate() {

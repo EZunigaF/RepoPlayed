@@ -7,17 +7,6 @@
     android:orientation="vertical"
     tools:context=".GamesActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_up"
-        android:layout_width="84dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="320dp"
-        android:layout_marginTop="405dp"
-        android:src="@drawable/add2"
-        app:fabCustomSize="@android:dimen/notification_large_icon_height"
-        app:maxImageSize="70dp"/>
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,17 +15,16 @@
         <EditText
             android:id="@+id/DescTitle"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="15dp"
-            android:background="@drawable/create_blog_style"
+            android:layout_height="69dp"
+            android:background="@color/Intro3"
             android:ems="10"
             android:fontFamily="@font/arbutus"
-            android:hint="Edit Blog Title"
+            android:hint="Title"
             android:inputType="textPersonName"
             android:textAlignment="center"
-            android:textColor="@color/Intro1"
-            android:textColorHint="@color/colorCyanNeon"
-            android:textSize="36sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFF7F7"
+            android:textSize="30sp"
             app:layout_constraintEnd_toStartOf="@+id/post_img"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -45,40 +33,64 @@
             android:id="@+id/DescFild"
             android:layout_width="match_parent"
             android:layout_height="131dp"
-            android:background="@color/colorCyanNeon"
+            android:background="@color/Intro4"
             android:ems="10"
             android:fontFamily="@font/arbutus"
-            android:hint="Description . . ."
+            android:hint="Description"
             android:inputType="textPersonName"
-            android:maxLines="3"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFF7F7"
-            android:textSize="24sp"/>
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
 
         <Spinner
             android:id="@+id/spinner1"
             android:layout_width="match_parent"
             android:layout_height="73dp"
-
-            android:background="@color/login_borderColor" />
+            android:background="#225C6E" />
 
         <Spinner
             android:id="@+id/spinner2"
             android:layout_width="match_parent"
             android:layout_height="73dp"
-            android:background="@color/colorMagentaNeon" />
+            android:background="#6875C0" />
 
         <ImageButton
             android:id="@+id/imageSelectedBlog"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="80dp"
-            android:layout_marginVertical="35dp"
+
             android:background="@mipmap/login"
             android:cropToPadding="false"
             android:scaleType="centerCrop" />
 
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_up"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_horizontal"
+            android:foregroundGravity="top|right"
+            android:src="@drawable/add2"
+            app:backgroundTint="#6AFFFFFF"
+            app:fabCustomSize="@android:dimen/notification_large_icon_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.902"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.791"
+            app:maxImageSize="70dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </RelativeLayout>
