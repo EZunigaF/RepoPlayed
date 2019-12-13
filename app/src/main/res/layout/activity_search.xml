@@ -11,12 +11,16 @@
         android:id="@+id/search_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="18dp"
-        android:layout_centerHorizontal="true"
-        android:text="Search a Game"
-        android:textStyle="bold"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="18dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="Buscar Juegos"
         android:textColor="@color/colorCyanNeon"
-        android:textSize="36dp" />
+        android:textSize="36dp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/user_searched_post"
@@ -26,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="75dp"
         android:layout_marginLeft="18dp"
-        android:hint="Buscar el blog aquí!"
+        android:hint="Buscar el Juegos aquí!"
         android:background="@drawable/register_borders"
         android:textColorHint="@color/colorBlack"
         android:textColor="@color/Intro1"
@@ -36,7 +40,7 @@
     <ImageButton
         android:id="@+id/searchPostBtn"
         android:layout_width="42dp"
-        android:layout_height="42dp"
+        android:layout_height="40dp"
         android:layout_marginVertical="79dp"
         android:layout_marginStart="325dp"
         android:background="@drawable/button_search_blog" />

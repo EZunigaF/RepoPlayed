@@ -36,7 +36,6 @@
             android:text="ID:"
             android:textColor="@color/colorCyanNeon"
             android:textSize="18dp" />
-
         <ImageButton
             android:id="@+id/editAction"
             android:layout_width="58dp"
@@ -45,9 +44,6 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="25dp"
             android:background="@drawable/game_item_edit"/>
-
-
-
 
     </RelativeLayout>
 

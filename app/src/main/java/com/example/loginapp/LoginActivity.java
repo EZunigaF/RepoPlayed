@@ -13,24 +13,30 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.text.TextWatcher;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
+import com.example.loginapp.Adapters.MyApplication;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+
 
 public class LoginActivity extends AppCompatActivity implements TextWatcher, CompoundButton.OnCheckedChangeListener, View.OnClickListener{
 
     private EditText txtEmail;
     private EditText txtPassword;
     private ProgressDialog mProgress;
+    private ImageButton logoutTopBar;
     //--------------------------------------------Preferencias-----------------------//
     private EditText etUsername, etPass;
+    private TextView forgotPass;
     private CheckBox rem_userpass;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -51,6 +57,7 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher, Com
         txtPassword = findViewById(R.id.editText2);
         forgotPass = findViewById(R.id.go_to_Forget);
         Button btnLogin = findViewById(R.id.button);
+        forgotPass = findViewById(R.id.go_to_Forget);
 
         btnLogin.setOnClickListener(this);
         TextView txtGoToRegister = findViewById(R.id.go_to_register);
@@ -72,6 +79,13 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher, Com
         etUsername.addTextChangedListener(this);
         etPass.addTextChangedListener(this);
         rem_userpass.setOnCheckedChangeListener(this);
+
+        forgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeForgate();
+            }
+        });
 
         //-------------------------------------------------------------------------------------------
 
@@ -95,18 +109,30 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher, Com
                 break;
 
             case R.id.go_to_register:
-
-
                 Intent intent= new Intent(this, RegisterActivity.class);
                 startActivity(intent);
                 break;
 
-                //Toast.makeText(this, "Has hecho login", Toast.LENGTH_LONG).show();
-                //break;
+             case R.id.go_to_Forget:
+                 makeForgate();
+                break;
+
+
+
+
+
                 }
+
+
         }
 
-        private void makeLogin(){
+    private void makeForgate() {
+        startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+        finish();
+    }
+
+
+    private void makeLogin(){
             mProgress.setMessage("Making Login. Please wait a second...");
             mProgress.show();
 

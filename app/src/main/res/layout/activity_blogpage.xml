@@ -33,11 +33,7 @@
                     android:layout_height="250dp"
                     android:background="@drawable/logo_neon_rp" />
 
-                <View
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
-                    android:layout_alignParentTop="true"
-                    android:background="@color/Intro1"/>
+
 
                 <ImageButton
                     android:id="@+id/button_goBack"

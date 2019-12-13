@@ -40,7 +40,7 @@ import java.util.ArrayList;
 public class PlayListFragment extends Fragment {
 
     private static String GOOGLE_YOUTUBE_API_KEY = "AIzaSyAdDix7i7a3an-gyXiquTV_14cIsr8-DZg";
-    private static String PLAYLIST_ID = "PLjr6WlxThOSkYAk9S8B69qR4jKriu7zNI";
+    private static String PLAYLIST_ID = "PLraFbwCoisJBTl0oXn8UoUam5HXWUZ7ES";
     private static String CHANNLE_GET_URL = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=" + PLAYLIST_ID + "&maxResults=20&key=" + GOOGLE_YOUTUBE_API_KEY + "";
 
     private RecyclerView mList_videos = null;
