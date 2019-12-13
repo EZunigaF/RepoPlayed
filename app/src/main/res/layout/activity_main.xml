@@ -5,7 +5,7 @@
     android:id="@+id/idLay"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/login_layout_background"
+    android:background="@mipmap/back"
     android:visibility="visible"
     tools:context=".LoginActivity"
     tools:visibility="visible">
@@ -66,19 +66,18 @@
         app:lottie_rawRes="@raw/play"
         app:lottie_scale="0.1" />
 
-
     <EditText
         android:id="@+id/editText"
         android:layout_width="324dp"
         android:layout_height="45dp"
-        android:background="@drawable/register_button_style"
+        android:background="@drawable/reg_btn_style"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
-        android:text=""
         android:textAlignment="center"
-        android:textColor="@color/colorBlack"
-        android:textColorHint="@color/colorBlack"
+        android:textColor="#FFFF"
+        android:textColorHint="#FFFFFF"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.527"
@@ -91,20 +90,20 @@
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/register_button_style"
+        android:background="@drawable/reg_btn_style"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        android:text=""
         android:textAlignment="center"
         android:textColor="@color/colorBlack"
         android:textColorHint="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintHorizontal_bias="0.692"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.603" />
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -112,47 +111,48 @@
         android:layout_height="279dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.013"
         app:srcCompat="@mipmap/logo" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/go_to_register"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="98dp"
+        android:layout_height="37dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/reg_btn_style"
-        android:text="Forgot password?"
-        android:textAlignment="center"
-        android:textColor="@color/colorCyanNeon"
-        android:textSize="24sp"
+        android:text="Register"
+        android:textColor="#ECDDE2"
+        android:textSize="20sp"
         app:fontFamily="casual"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.965"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
-    <TextView
-        android:id="@+id/go_to_register"
-        style="@style/Widget.AppCompat.TextView.SpinnerItem"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:background="@drawable/reg_btn_style"
-        android:text="Register"
-        android:textAlignment="center"
-        android:textColor="@color/colorCyanNeon"
-        android:textSize="24sp"
-        app:fontFamily="casual"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.978" />
+
+
+<TextView
+    android:id="@+id/go_to_Forget"
+    android:layout_width="187dp"
+    android:layout_height="35dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:text="Forgot password?"
+    android:textColor="#ECDDE2"
+    android:textSize="20sp"
+    app:fontFamily="casual"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="@+id/guideline"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.975"/>
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -180,23 +180,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintVertical_bias="0.978" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
+        android:layout_width="313dp"
         android:layout_height="22dp"
         android:text="Remember username and password"
         android:textColor="#FFFEFE"
         android:textColorHint="#F12863"
-        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.836"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.657" />
+        app:layout_constraintVertical_bias="0.661" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

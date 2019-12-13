@@ -7,6 +7,7 @@
         android:id="@+id/icon_result"
         android:layout_width="115dp"
         android:layout_height="120dp"
+        android:layout_margin="12dp"
         app:srcCompat="@drawable/top_navigation_icon" />
 
     <TextView

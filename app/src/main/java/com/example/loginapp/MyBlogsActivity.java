@@ -1,37 +1,28 @@
 package com.example.loginapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.example.loginapp.Adapters.MyApplication;
-import com.example.loginapp.Blog;
-import com.example.loginapp.EditGame;
-import com.example.loginapp.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.koushikdutta.ion.Ion;
-import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Document;
 
 public class MyBlogsActivity extends AppCompatActivity {
     private RecyclerView mResultListOwner;
@@ -74,7 +65,7 @@ public class MyBlogsActivity extends AppCompatActivity {
         editProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MyBlogsActivity.this, "Editing in coming", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MyBlogsActivity.this, MyProfileActivity.class));
             }
         });
         

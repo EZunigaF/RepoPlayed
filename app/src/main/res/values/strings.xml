@@ -39,5 +39,6 @@
     </string-array>
     <string name="title_activity_youtube">YoutubeActivity</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_main3">Main3Activity</string>
 
 </resources>

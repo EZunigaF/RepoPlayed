@@ -8,7 +8,7 @@
     <item
         android:id="@+id/addPost"
         android:title="Add Post"
-        android:icon="@mipmap/add"
+        android:icon="@mipmap/i"
         app:showAsAction="always"
         />
 

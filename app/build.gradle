@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 29
@@ -35,10 +37,10 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
-    compile 'com.squareup.okhttp:okhttp:2.3.0'
-    compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    implementation 'com.squareup.okhttp:okhttp:2.3.0'
+    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
 
 
     implementation 'com.airbnb.android:lottie:3.0.7'
@@ -58,6 +60,8 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
     implementation 'de.hdodenhof:circleimageview:3.0.1'
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 
 }
@@ -72,3 +76,6 @@ apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle p
 
 
 android { sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/2'] } } }
+repositories {
+    mavenCentral()
+}

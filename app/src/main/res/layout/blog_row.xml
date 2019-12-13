@@ -6,6 +6,7 @@
 
     android:orientation="vertical">
 
+
     <RelativeLayout
         android:id="@+id/relativelayout"
         android:layout_width="match_parent"
@@ -13,17 +14,11 @@
 
         <ImageView
             android:id="@+id/post_img"
-            android:layout_marginTop="52dp"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="291dp"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/degradados1" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:background="@drawable/home_card_desc"
-            android:layout_marginTop="215dp"/>
 
         <TextView
             android:id="@+id/post_text"
@@ -31,32 +26,31 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/post_img"
             android:layout_marginBottom="0dp"
+
+            android:background="@color/blue_semi_transparent"
             android:padding="15dp"
             android:shadowColor="#6FEE17"
-            android:textStyle="bold"
             android:text="Desc"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
-
-
-
         <View
             android:layout_width="match_parent"
             android:layout_height="95dp"
             android:background="@drawable/home_iced_card_title"/>
-
         <TextView
             android:id="@+id/post_title"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title_game"
+            android:foregroundGravity="center"
+            android:gravity="center"
             android:text="Title"
-            android:textAlignment="textStart"
-            android:layout_marginStart="25dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="#F7F7F7"
+            android:textColorHint="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="36sp"
             android:typeface="serif" />
-        
+
         <TextView
             android:id="@+id/category_post"
             android:layout_width="200dp"
@@ -72,15 +66,5 @@
 
 
     </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="32px"
-        android:background="@color/black"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="32px"
-        android:background="@color/colorTransparent"/>
 
 </LinearLayout>

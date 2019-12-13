@@ -182,33 +182,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-    private void CreateUserAccount(final String email, final String name, final String password, final String Url) {
-
-        showMessage("Accediendo por favor espere...");
-        regBtn.setVisibility(View.INVISIBLE);
-        loadingProgress.setVisibility(View.VISIBLE);
-
-            mAuth.createUserWithEmailAndPassword(email,password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-
-                                showMessage("Account created");
-                                updateUserInfo(name, pickedImgUri, mAuth.getCurrentUser());
-                            }
-                            else
-                            {
-
-                                // account creation failed
-                                showMessage("account creation failed" + task.getException().getMessage());
-                                regBtn.setVisibility(View.VISIBLE);
-                                loadingProgress.setVisibility(View.INVISIBLE);
-
-                            }
-                        }
-                    });
-        }
 
     // update user photo and name
     private void updateUserInfo(final String name, Uri pickedImgUri, final FirebaseUser currentUser) {

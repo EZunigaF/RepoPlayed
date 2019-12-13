@@ -15,8 +15,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/regUserPhoto"
-        android:layout_width="207dp"
-        android:layout_height="205dp"
+        android:layout_width="152dp"
+        android:layout_height="153dp"
         android:background="@drawable/circle_bg"
         android:padding="5dp"
         android:paddingLeft="10dp"
@@ -74,12 +74,13 @@
         android:layout_height="wrap_content"
         android:background="@drawable/reg_edittext_style"
         android:hint="Password"
-        android:inputType="textVisiblePassword"
+        android:inputType="textPassword"
         android:textColorHighlight="#F5FFFFFF"
         android:textColorLink="#FFFFFF" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ly_txt_password2"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -91,8 +92,8 @@
         android:layout_width="328dp"
         android:layout_height="wrap_content"
         android:background="@drawable/reg_edittext_style"
-        android:hint="Repet Password"
-        android:inputType="textVisiblePassword"
+        android:inputType="textPassword"
+        android:hint="Password"
         android:textColorHighlight="#F5FFFFFF"
         android:textColorLink="#FFFFFF" />
 
@@ -103,6 +104,7 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/btnredondo2"
         android:text="Register"
+        android:textColor="#FFFFFF"
         app:layout_constraintTop_toBottomOf="@+id/txtPassword2" />
 
     <ProgressBar
