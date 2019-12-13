@@ -50,6 +50,8 @@ public class EditGame extends AppCompatActivity {
     ImageButton goBack;
     EditText upTitle;
     EditText upDescrip;
+    EditText upConsole;
+    EditText upCategory;
     Button saveUpdate;
     Button cancelUpdate;
     ImageButton deleteBlog;
@@ -68,14 +70,13 @@ public class EditGame extends AppCompatActivity {
         uploadedFrame = findViewById(R.id.imageUpdatedUpload);
         upTitle = findViewById(R.id.updatedTitleField);
         upDescrip = findViewById(R.id.updatedDescripField);
+        upConsole = findViewById(R.id.bioConsoleGame);
+        upCategory = findViewById(R.id.bioCategoryGame);
         cancelUpdate = findViewById(R.id.cancelUpdate);
         saveUpdate = findViewById(R.id.saveUpdated);
         deleteBlog = findViewById(R.id.deleteBlogAction);
         mStorage = FirebaseStorage.getInstance().getReference();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Blog");
-
-
-
 
         buttonsListener();
         mProgress = new ProgressDialog(this);
@@ -93,9 +94,8 @@ public class EditGame extends AppCompatActivity {
         if (BlogPage != null){
             upTitle.setText(BlogPage.getStringExtra("title"));
             upDescrip.setText(BlogPage.getStringExtra("descrip"));
-            //BlogPageCategory.setText(BlogPage.getStringExtra("category"));
-            //BlogPageConsole.setText(BlogPage.getStringExtra("console"));
-            //BlogImageURL = (BlogPage.getStringExtra("imageurl"));
+            upCategory.setText(BlogPage.getStringExtra("category"));
+            upConsole.setText(BlogPage.getStringExtra("console"));
             theVBlogID = BlogPage.getStringExtra("vbid");
             BlogImageURL = BlogPage.getStringExtra("imageurl");
             Ion.with(uploadedFrame)
@@ -113,8 +113,10 @@ public class EditGame extends AppCompatActivity {
         final String title_val = upTitle.getText().toString().trim();
         final String desc_val = upDescrip.getText().toString().trim();
         final String imageUpload = BlogImageURL;
+        final String category = upCategory.getText().toString();
+        final String console = upConsole.getText().toString();
         final String creator = userCreator;
-        auxBlog = new Blog(title_val,desc_val,imageUpload,"consoDefuault","categDefault",creator);
+        auxBlog = new Blog(title_val,desc_val,imageUpload,console,category,creator);
 
     }
 

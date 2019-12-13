@@ -212,9 +212,9 @@ public class MyBlogsActivity extends AppCompatActivity {
             String id = getBId();
             Intent BlogPage = new Intent(MyApplication.getAppContext(), EditGame.class);
             BlogPage.putExtra("title",blogAux.getTitle());
-            //BlogPage.putExtra("console", blogAux.getConso());
+            BlogPage.putExtra("console", blogAux.getConso());
             BlogPage.putExtra("descrip", blogAux.getDesc());
-            //BlogPage.putExtra("category", blogAux.getCateg());
+            BlogPage.putExtra("category", blogAux.getCateg());
             BlogPage.putExtra("imageurl", blogAux.getimageUrl());
             BlogPage.putExtra("vbid", id);
 

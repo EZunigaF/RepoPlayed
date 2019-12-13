@@ -78,30 +78,28 @@
         android:paddingHorizontal="12dp"
         android:layout_marginTop="340dp"
         android:background="@color/colorWhite"/>
-    
+
     <EditText
         android:id="@+id/updatedTitleField"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginHorizontal="25dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="260dp"
-        android:background="@drawable/blog_edit_style_text"/>
+        android:background="@drawable/blog_edit_style_text" />
 
     <EditText
         android:id="@+id/updatedDescripField"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_marginHorizontal="25dp"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="390dp"
-        android:background="@drawable/blog_edit_style_text"/>
+        android:background="@drawable/blog_edit_style_text" />
 
     <Button
         android:id="@+id/saveUpdated"
         android:layout_width="350px"
         android:layout_height="45dp"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="620dp"
         android:layout_marginStart="245dp"
         android:background="@drawable/register_button_style"
         android:text="Save"
@@ -111,11 +109,78 @@
         android:id="@+id/cancelUpdate"
         android:layout_width="350px"
         android:layout_height="45dp"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="620dp"
         android:layout_marginStart="25dp"
         android:background="@drawable/register_button_style"
         android:textColor="@color/Intro4"
         android:text="Cancel "/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="515dp"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="175dp"
+            android:layout_height="80dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="Console:"
+                android:textColor="@color/colorMagentaNeon"
+                android:textSize="20sp"
+                android:layout_marginHorizontal="45dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/bioConsoleGame"
+                android:layout_width="155dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blog_edit_style_text"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginStart="-2dp"
+                android:text="Console"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="175dp"
+            android:layout_height="80dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:text="Category:"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorMagentaNeon"
+                android:textSize="20sp"
+                android:layout_marginHorizontal="40dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/bioCategoryGame"
+                android:layout_width="155dp"
+                android:layout_marginStart="2dp"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:background="@drawable/blog_edit_style_text"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+
 
     <!--    g(String title, String Desc, String imageUrl, String conso,String categ) {-->
 

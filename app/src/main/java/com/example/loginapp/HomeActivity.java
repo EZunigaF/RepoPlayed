@@ -201,6 +201,7 @@ public class HomeActivity extends AppCompatActivity {
                 blogViewHolder.setBlog(blog);
                 blogViewHolder.setTitle(blog.getTitle());
                 blogViewHolder.setDesc(blog.getDesc());
+                blogViewHolder.setConso(blog.getConso());
                 blogViewHolder.setImg(getApplicationContext(), blog.getimageUrl());
             }
         };
@@ -222,7 +223,7 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         public void setConso(String conso){
-            post_conso = (TextView) mView.findViewById(R.id.post_text);
+            post_conso = (TextView) mView.findViewById(R.id.category_post);
             post_conso.setText(conso);
             post_conso.setOnClickListener(this);
         }
@@ -314,8 +315,14 @@ public class HomeActivity extends AppCompatActivity {
                 ////////////////////////////////
                 String bioUser = mAuth.getCurrentUser().getEmail();
                 String bioDisplay = mAuth.getCurrentUser().getDisplayName();
-                String bioImage = photoUrl.toString();
+                String bioImage = "";
 
+                    if (photoUrl == null){
+                        bioImage="";
+                    }
+                    else{
+                        bioImage = photoUrl.toString();
+                    };
                 Intent bioUserGames = new Intent(MyApplication.getAppContext(), MyBlogsActivity.class);
                 bioUserGames.putExtra("user", bioUser);
                 bioUserGames.putExtra("bioImg", bioImage);

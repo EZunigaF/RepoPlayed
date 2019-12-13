@@ -6,7 +6,7 @@
 
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorWhiteD5">#D5F5FF</color>
-    <color name="colorTransparent">#FFFFFF</color>
+    <color name="colorTransparent">#00FFFFFF</color>
     <color name="colorMagentaNeon">#EC3E79</color>
     <color name="colorCyanNeon">#05D8FC</color>
     <color name="colorCyanNeon2">#05D8FC</color>
