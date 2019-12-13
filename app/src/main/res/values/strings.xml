@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoginApp</string>
+    <string name="app_name">Review Played</string>
     <string name="title_activity_main"> </string>
     <string name="PasswordHint">Password</string>
     <string name="EmailHint">Email</string>

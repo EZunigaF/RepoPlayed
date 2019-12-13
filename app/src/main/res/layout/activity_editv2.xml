@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyProfileActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.ProfileFragment">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/Intro4">
+
+            <RelativeLayout
+                android:id="@+id/layoutHead"
+                android:layout_width="match_parent"
+                android:layout_height="168dp"
+                android:background="@color/Intro1">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="110dp"
+                    android:layout_height="112dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/circle_bg"
+                    android:padding="5dp"
+                    android:paddingLeft="10dp"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp" />
+
+                <EditText
+                    android:id="@+id/edit_text_name"
+                    android:layout_width="167dp"
+                    android:layout_height="43dp"
+                    android:padding="0dp"
+                    android:layout_below="@id/image_view"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-7dp"
+                    android:enabled="true"
+                    android:hint="Enter Name"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="#FFFFFF"
+                    tools:text="Nombre" />
+
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/layoutHead"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+
+                <TextView
+                    android:id="@+id/text_password5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginBottom="20dp"
+
+                    android:drawablePadding="16dp"
+                    android:enabled="true"
+                    android:text="Name"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/text_password2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginBottom="20dp"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:drawablePadding="16dp"
+                    android:enabled="true"
+                    android:text="Name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/text_password4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginBottom="20dp"
+
+                    android:drawablePadding="16dp"
+                    android:enabled="true"
+                    android:text="Email"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="#FFFFFF" />
+
+
+                <TextView
+                    android:id="@+id/text_password3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginBottom="20dp"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:drawablePadding="16dp"
+                    android:enabled="true"
+                    android:text="Email"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/button_save"
+                    android:layout_width="128dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:background="?colorPrimary"
+                    android:text="Save Changes"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+
+
+</RelativeLayout>

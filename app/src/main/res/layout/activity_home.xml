@@ -163,7 +163,7 @@
                         android:id="@+id/btnShutOffTopBar_Home"
                         android:layout_width="35dp"
                         android:layout_height="45dp"
-                        android:layout_marginStart="205dp"
+                        android:layout_marginStart="195dp"
                         android:layout_marginTop="15dp"
                         android:background="@drawable/home_btnlogoff" />
 

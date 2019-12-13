@@ -5,183 +5,198 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditGame"
-    android:background="@drawable/register_background">
+    android:background="@color/Intro2">
 
-
-
-
-    <ImageView
-        android:id="@+id/imageUpdatedUpload"
-        android:layout_centerHorizontal="true"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:padding="12px"
-        android:background="@drawable/logo"
-        />
-
-    <View
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_alignParentTop="true"
-        android:background="@color/Intro1"/>
-
-    <View
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:padding="15dp"
-        android:background="@color/Intro1"/>
-
-    <ImageButton
-        android:id="@+id/deleteBlogAction"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/remove"
-        />
-
-    <ImageButton
-        android:id="@+id/button_goBack"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="-2dp"
-        android:background="@drawable/button_goback" />
-
-    <View
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="9dp"
-        android:background="@color/colorMagentaNeon"
-        android:layout_marginTop="200dp"></View>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="220dp"
-        android:text="Title of the blog:"
-        android:paddingHorizontal="12dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorBlack"
-        android:background="@color/colorWhite"
-        android:textSize="24dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:text="Description of the blog:"
-        android:textSize="24dp"
-        android:textColor="@color/colorBlack"
-        android:textStyle="bold"
-        android:layout_marginStart="50dp"
-        android:paddingHorizontal="12dp"
-        android:layout_marginTop="340dp"
-        android:background="@color/colorWhite"/>
-
-    <EditText
-        android:id="@+id/updatedTitleField"
+    <!--  TODO>>>>  TABLE LAYOUT (Contiene TEXTS IMAGES Y ELEMENTOS del BlogPageActivity-->
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="260dp"
-        android:background="@drawable/blog_edit_style_text" />
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
 
-    <EditText
-        android:id="@+id/updatedDescripField"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="390dp"
-        android:background="@drawable/blog_edit_style_text" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/saveUpdated"
-        android:layout_width="350px"
-        android:layout_height="45dp"
-        android:layout_marginTop="620dp"
-        android:layout_marginStart="245dp"
-        android:background="@drawable/register_button_style"
-        android:text="Save"
-        android:textColor="@color/colorMagentaNeon"/>
+            <ImageView
+                android:id="@+id/imageUpdatedUpload"
+                android:layout_centerHorizontal="true"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:padding="12px"
+                android:background="@drawable/logo"
+                />
 
-    <Button
-        android:id="@+id/cancelUpdate"
-        android:layout_width="350px"
-        android:layout_height="45dp"
-        android:layout_marginTop="620dp"
-        android:layout_marginStart="25dp"
-        android:background="@drawable/register_button_style"
-        android:textColor="@color/Intro4"
-        android:text="Cancel "/>
+            <View
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_alignParentTop="true"
+                android:background="@color/Intro1"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="515dp"
-        android:weightSum="2">
+            <View
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:padding="15dp"
+                android:background="@color/Intro1"/>
 
-        <LinearLayout
-            android:layout_width="175dp"
-            android:layout_height="80dp"
-            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/deleteBlogAction"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/remove"
+                />
 
+            <ImageButton
+                android:id="@+id/button_goBack"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/button_goback" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="9dp"
+                android:background="@color/colorMagentaNeon"
+                android:layout_marginTop="200dp"></View>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:text="Console:"
-                android:textColor="@color/colorMagentaNeon"
-                android:textSize="20sp"
-                android:layout_marginHorizontal="45dp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/bioConsoleGame"
-                android:layout_width="155dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/blog_edit_style_text"
-                android:lineSpacingExtra="4dp"
-                android:layout_marginStart="-2dp"
-                android:text="Console"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="175dp"
-            android:layout_height="80dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="220dp"
+                android:text="Title of the blog:"
+                android:paddingHorizontal="12dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
                 android:background="@color/colorWhite"
-                android:text="Category:"
-                android:textAlignment="viewEnd"
-                android:textColor="@color/colorMagentaNeon"
-                android:textSize="20sp"
-                android:layout_marginHorizontal="40dp"
-                android:textStyle="bold" />
+                android:textSize="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:text="Description of the blog:"
+                android:textSize="24dp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:layout_marginStart="50dp"
+                android:paddingHorizontal="12dp"
+                android:layout_marginTop="340dp"
+                android:background="@color/colorWhite"/>
 
             <EditText
-                android:id="@+id/bioCategoryGame"
-                android:layout_width="155dp"
-                android:layout_marginStart="2dp"
+                android:id="@+id/updatedTitleField"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="260dp"
+                android:background="@drawable/blog_edit_style_text" />
+
+            <EditText
+                android:id="@+id/updatedDescripField"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="390dp"
+                android:background="@drawable/blog_edit_style_text" />
+
+            <Button
+                android:id="@+id/saveUpdated"
+                android:layout_width="350px"
+                android:layout_height="45dp"
+                android:layout_marginTop="620dp"
+                android:layout_marginStart="245dp"
+                android:background="@drawable/register_button_style"
+                android:text="Save"
+                android:textColor="@color/colorMagentaNeon"/>
+
+            <Button
+                android:id="@+id/cancelUpdate"
+                android:layout_width="350px"
+                android:layout_height="45dp"
+                android:layout_marginTop="620dp"
+                android:layout_marginStart="25dp"
+                android:background="@drawable/register_button_style"
+                android:textColor="@color/Intro4"
+                android:text="Cancel "/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Category"
-                android:background="@drawable/blog_edit_style_text"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </LinearLayout>
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="515dp"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="175dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical">
 
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:text="Console:"
+                        android:textColor="@color/colorMagentaNeon"
+                        android:textSize="20sp"
+                        android:layout_marginHorizontal="45dp"
+                        android:textStyle="bold" />
 
-    <!--    g(String title, String Desc, String imageUrl, String conso,String categ) {-->
+                    <EditText
+                        android:id="@+id/bioConsoleGame"
+                        android:layout_width="155dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/blog_edit_style_text"
+                        android:lineSpacingExtra="4dp"
+                        android:layout_marginStart="-2dp"
+                        android:text="Console"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="175dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:text="Category:"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/colorMagentaNeon"
+                        android:textSize="20sp"
+                        android:layout_marginHorizontal="40dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/bioCategoryGame"
+                        android:layout_width="155dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_height="wrap_content"
+                        android:text="Category"
+                        android:background="@drawable/blog_edit_style_text"
+                        android:textColor="@android:color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </TableLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
+

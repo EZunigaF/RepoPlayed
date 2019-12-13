@@ -12,7 +12,7 @@
         android:layout_width="84dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="320dp"
-        android:layout_marginTop="405dp"
+        android:layout_marginTop="435dp"
         android:src="@drawable/add2"
         app:fabCustomSize="@android:dimen/notification_large_icon_height"
         app:maxImageSize="70dp"/>
@@ -54,7 +54,7 @@
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFF7F7"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
         <Spinner
             android:id="@+id/spinner1"

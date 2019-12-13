@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher, Com
     private CheckBox rem_userpass;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    private TextView forgotPass;
     private static final String PREF_NAME = "prefs";
     private static final String KEY_REMEMBER = "remember";
     private static final String KEY_USERNAME = "username";
@@ -48,6 +49,7 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher, Com
 
         txtEmail = findViewById(R.id.editText);
         txtPassword = findViewById(R.id.editText2);
+        forgotPass = findViewById(R.id.go_to_Forget);
         Button btnLogin = findViewById(R.id.button);
 
         btnLogin.setOnClickListener(this);
@@ -72,6 +74,14 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher, Com
         rem_userpass.setOnCheckedChangeListener(this);
 
         //-------------------------------------------------------------------------------------------
+
+        forgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+                finish();
+            }
+        });
     }
 
 

@@ -9,16 +9,29 @@
 
 
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="280dp">
+
+
 
         <View
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:background="@color/Intro1"></View>
 
-        <View
+        <ImageView
+            android:id="@+id/bioImageProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/logo2"
+            />
+
+        View
             android:layout_width="52dp"
             android:layout_height="52dp"
             android:layout_alignParentTop="true"
@@ -43,14 +56,7 @@
             android:layout_alignParentTop="true"
             android:background="@drawable/button_goback"/>
 
-        <ImageView
-            android:id="@+id/bioImageProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="180dp"
-            android:layout_marginTop="10dp"
-            android:layout_centerHorizontal="true"
-            android:background="@mipmap/logo2"
-            />
+
 
         <RelativeLayout
             android:layout_width="match_parent"

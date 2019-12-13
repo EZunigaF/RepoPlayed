@@ -40,7 +40,7 @@ import java.util.ArrayList;
 public class LiveFragment extends Fragment {
 
     private static String GOOGLE_YOUTUBE_API_KEY = "AIzaSyAdDix7i7a3an-gyXiquTV_14cIsr8-DZg";
-    private static String CHANNEL_ID = "UC_97SgBQ-PORMqLO4r0_f7g";
+    private static String CHANNEL_ID = "UCMwePVHRpDdfeUcwtDZu2Dw";
     private static String CHANNLE_GET_URL = "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&channelId=" + CHANNEL_ID + "&eventType=live&maxResults=20&key=" + GOOGLE_YOUTUBE_API_KEY + "";
 
 

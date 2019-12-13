@@ -28,22 +28,23 @@
         <TextView
             android:id="@+id/post_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
             android:layout_alignBottom="@id/post_img"
             android:layout_marginBottom="0dp"
-            android:padding="15dp"
+            android:maxLines="2"
             android:shadowColor="#6FEE17"
             android:textStyle="bold"
             android:text="Desc"
             android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:textSize="18sp" />
 
 
 
         <View
             android:layout_width="match_parent"
             android:layout_height="95dp"
-            android:background="@drawable/home_iced_card_title"/>
+            android:background="@drawable/home_card_title"/>
 
         <TextView
             android:id="@+id/post_title"
@@ -75,12 +76,12 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="32px"
-        android:background="@color/black"/>
+        android:layout_height="6px"
+        android:background="@color/colorCyanNeon"/>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="32px"
-        android:background="@color/colorTransparent"/>
+        android:layout_height="12px"
+        android:background="@color/black"/>
 
 </LinearLayout>

@@ -75,6 +75,7 @@ public class MyBlogsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MyBlogsActivity.this, "Editing in coming", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MyBlogsActivity.this, MyProfileActivity.class));
             }
         });
         
