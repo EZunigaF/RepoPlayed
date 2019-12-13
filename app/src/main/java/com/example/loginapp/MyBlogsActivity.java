@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +37,14 @@ public class MyBlogsActivity extends AppCompatActivity {
     private RecyclerView mResultListOwner;
     private DatabaseReference mPostReference;
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private TextView bioUserName;
+    private TextView bioEmail;
+    private String bioImageURL;
+    private ImageView bioImage;
+    private ImageButton editProfileButton;
+    ImageButton goBack;
+
+
 
 
     @Override
@@ -44,9 +55,40 @@ public class MyBlogsActivity extends AppCompatActivity {
         mPostReference = FirebaseDatabase.getInstance().getReference("Blog");
         mResultListOwner = (RecyclerView) findViewById(R.id.result_post);
 
+        bioUserName = findViewById(R.id.bioDisplayName);
+        bioEmail = findViewById(R.id.bioEmail);
+        bioImage = findViewById(R.id.bioImageProfile);
+        goBack = findViewById(R.id.button_goBack);
+        editProfileButton = findViewById(R.id.editUserAction);
         mResultListOwner.setHasFixedSize(true);
         mResultListOwner.setLayoutManager(new LinearLayoutManager(this));
         firebaseSearch();
+
+        goBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        
+        editProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MyBlogsActivity.this, "Editing in coming", Toast.LENGTH_SHORT).show();
+            }
+        });
+        
+        
+
+
+        Intent bioUserGames = getIntent();
+        if (bioUserGames != null){
+            bioUserName.setText(bioUserGames.getStringExtra("display"));
+            bioEmail.setText(bioUserGames.getStringExtra("user"));
+            bioImageURL = bioUserGames.getStringExtra("bioImg");
+                    Ion.with(bioImage).centerCrop().load(bioImageURL);
+            //Glide.with(getApplicationContext()).load(photoUrl).into(bioImage);
+        }
 
 
     }
@@ -88,12 +130,21 @@ public class MyBlogsActivity extends AppCompatActivity {
         TextView blog_category;
         TextView blog_title;
         ImageView blog_image;
+        ImageButton editTrigger;
         String id;
 
         public BlogViewHolder(@NonNull View itemView) {
             super(itemView);
 
+
             mPostView = itemView;
+            editTrigger = mPostView.findViewById(R.id.editAction);
+//            editTrigger.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText(MyApplication.getAppContext(), "Wanna edit huh", Toast.LENGTH_SHORT).show();
+//                }
+//            });
 
         }
 
@@ -113,6 +164,12 @@ public class MyBlogsActivity extends AppCompatActivity {
             blog_image = (ImageView) mPostView.findViewById(R.id.icon_result);
             Glide.with(MyApplication.getAppContext()).load(image).into(blog_image);
             blog_image.setOnClickListener(this);
+            editTrigger.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    editingGame();
+                }
+            });
         }
 
 
@@ -131,15 +188,18 @@ public class MyBlogsActivity extends AppCompatActivity {
         @Override
 
         public void onClick(View v) {
-            int position = getAdapterPosition();
-            String id = getBId();
-            Intent BlogPage = new Intent(MyApplication.getAppContext(), EditGame.class);
+            seeingGame();
+        }
+        
+        
+
+        private void seeingGame(){
+            Intent BlogPage = new Intent(MyApplication.getAppContext(), BlogPageActivity.class);
             BlogPage.putExtra("title",blogAux.getTitle());
-            //BlogPage.putExtra("console", blogAux.getConso());
+            BlogPage.putExtra("console", blogAux.getConso());
             BlogPage.putExtra("descrip", blogAux.getDesc());
-            //BlogPage.putExtra("category", blogAux.getCateg());
+            BlogPage.putExtra("category", blogAux.getCateg());
             BlogPage.putExtra("imageurl", blogAux.getimageUrl());
-            BlogPage.putExtra("vbid", getBId());
 
             //ERROR NOVIEMBRE 21    Calling startActivity() from outside of an Activity
             BlogPage.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -147,6 +207,24 @@ public class MyBlogsActivity extends AppCompatActivity {
 
             MyApplication.getAppContext().startActivity(BlogPage);
         }
+
+        private void editingGame(){
+            String id = getBId();
+            Intent BlogPage = new Intent(MyApplication.getAppContext(), EditGame.class);
+            BlogPage.putExtra("title",blogAux.getTitle());
+            //BlogPage.putExtra("console", blogAux.getConso());
+            BlogPage.putExtra("descrip", blogAux.getDesc());
+            //BlogPage.putExtra("category", blogAux.getCateg());
+            BlogPage.putExtra("imageurl", blogAux.getimageUrl());
+            BlogPage.putExtra("vbid", id);
+
+            //ERROR NOVIEMBRE 21    Calling startActivity() from outside of an Activity
+            BlogPage.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            //End
+
+            MyApplication.getAppContext().startActivity(BlogPage);
+        }
+
 
         }
 }

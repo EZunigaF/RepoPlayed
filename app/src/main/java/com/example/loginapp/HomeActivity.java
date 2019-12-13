@@ -44,6 +44,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.j256.ormlite.stmt.query.In;
 import com.squareup.picasso.Picasso;
 
 import java.util.Arrays;
@@ -74,7 +75,7 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView imgUserPost;
 
     //ImageButtons Top menu
-    private ImageButton logoutTopBar;
+    private ImageButton VideoTopBar;
     private ImageButton postTopBar;
     private ImageButton searchTopBar;
     private String TAG="HomeActivity";
@@ -132,9 +133,11 @@ public class HomeActivity extends AppCompatActivity {
 
 
         ///TOP MENU IMAGE BUTTONS (LOG OUT / ADD TIPS / SEARCH TIPS)
-        logoutTopBar = findViewById(R.id.logoutTopBar_Home);
+        VideoTopBar = findViewById(R.id.VideoTopBar_Home);
+        loginOut = findViewById(R.id.btnShutOffTopBar_Home);
         postTopBar = findViewById(R.id.postTopBar_Home);
         searchTopBar = findViewById(R.id.searchTopBar_Home);
+
 
         //Add Clicks
         checkUserStatus();
@@ -271,7 +274,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
     public void topBarListeners(){
-        logoutTopBar.setOnClickListener(new View.OnClickListener() {
+        VideoTopBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, VideoActivity.class));
@@ -304,7 +307,21 @@ public class HomeActivity extends AppCompatActivity {
         imgUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MyApplication.getAppContext(), MyBlogsActivity.class));
+
+                firebaseUser.getPhotoUrl();
+                Uri photoUrl = firebaseUser.getPhotoUrl();
+
+                ////////////////////////////////
+                String bioUser = mAuth.getCurrentUser().getEmail();
+                String bioDisplay = mAuth.getCurrentUser().getDisplayName();
+                String bioImage = photoUrl.toString();
+
+                Intent bioUserGames = new Intent(MyApplication.getAppContext(), MyBlogsActivity.class);
+                bioUserGames.putExtra("user", bioUser);
+                bioUserGames.putExtra("bioImg", bioImage);
+                bioUserGames.putExtra("display", bioDisplay);
+                bioUserGames.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                MyApplication.getAppContext().startActivity(bioUserGames);
             }
         });
 

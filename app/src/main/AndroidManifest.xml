@@ -48,7 +48,6 @@
             android:label="@string/title_activity_youtube"
             android:theme="@style/AppTheme.NoActionBar" />
 
-
         <activity
             android:name=".BlogPageActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -88,7 +87,7 @@
 
         <activity
             android:name=".MyBlogsActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".EditGame"

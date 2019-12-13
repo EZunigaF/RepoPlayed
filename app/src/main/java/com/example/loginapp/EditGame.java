@@ -99,9 +99,6 @@ public class EditGame extends AppCompatActivity {
             theVBlogID = BlogPage.getStringExtra("vbid");
             BlogImageURL = BlogPage.getStringExtra("imageurl");
             Ion.with(uploadedFrame)
-                    .centerCrop(
-
-                    )
                     .load(BlogPage.getStringExtra("imageurl"));
         }
         //Toast.makeText(this, "infoIntentLoaded" + theVBlogID, Toast.LENGTH_SHORT).show();

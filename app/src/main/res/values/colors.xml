@@ -126,5 +126,6 @@
     <color name="blue_semi_transparent_pressed">#80738ffe</color>
     <color name="black">#000000</color>
     <color name="gray">#A9A9A9</color>
+    <color name="iceColor">#D5F5FF</color>
 
 </resources>

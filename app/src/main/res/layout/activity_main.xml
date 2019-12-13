@@ -66,6 +66,7 @@
         app:lottie_rawRes="@raw/play"
         app:lottie_scale="0.1" />
 
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="324dp"
@@ -83,7 +84,6 @@
         app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <EditText
         android:id="@+id/editText2"

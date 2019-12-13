@@ -4,20 +4,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyBlogsActivity">
+    tools:context=".MyBlogsActivity"
+    android:background="@color/iceColor">
 
-    <View
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/home_btnlogoff"
-        ></View>
+        android:layout_height="280dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="@color/Intro1"></View>
+
+        <View
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorMagentaNeon"/>
+
+        <ImageButton
+            android:id="@+id/editUserAction"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/top_navigation_icon"
+            />
+
+
+
+        <ImageButton
+            android:id="@+id/button_goBack"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/button_goback"/>
+
+        <ImageView
+            android:id="@+id/bioImageProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/logo2"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="150dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="9dp"
+                        android:text="Email:"
+                        android:textColor="@color/colorMagentaNeon"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@color/colorBlack"/>
+
+                    <TextView
+                        android:id="@+id/bioEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="9dp"
+                        android:layout_marginTop="15dp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="emailU"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorBlack"
+                        android:text="Username:"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/colorMagentaNeon"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/bioDisplayName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="DISPLAY"
+                        android:textColor="@android:color/white"
+                        android:textSize="28sp"
+                        android:textAlignment="textEnd"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:text="My Games"
+        android:textColor="@color/colorMagentaNeon"
+        android:textSize="32sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/result_post"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="300dp"
         />
 
 

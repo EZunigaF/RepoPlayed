@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
-        android:text="Buscar Blogs"
+        android:layout_centerHorizontal="true"
+        android:text="Search a Game"
         android:textStyle="bold"
         android:textColor="@color/colorCyanNeon"
         android:textSize="36dp" />
