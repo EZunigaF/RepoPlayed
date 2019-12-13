@@ -14,10 +14,11 @@
     <string name="userWelcome">Welcome User:</string>
     <string name="homeTopBarText">Chats</string>
     <string name="friendsTopBarText">Friends</string>
-    <string name="postTopBarText">YouTube</string>
+    <string name="postTopBarText">Yotube</string>
     <string name="blank" />
     <string name="logoutTopMenu">Log out</string>
-
+    <string name="deleteBlogMessage">Deleting this Game</string>
+    <string name="exitConfirm">SHUTING DOWN??</string>
     <string name="title_activity_home">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -28,8 +29,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="exitConfirm">SHUTING DOWN??</string>
-    <string name="deleteBlogMessage">Deleting this Game</string>
 
     <string-array name="numbers">
         <item>One</item>
@@ -38,5 +37,7 @@
         <item>Four</item>
         <item>Five</item>
     </string-array>
+    <string name="title_activity_youtube">YoutubeActivity</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

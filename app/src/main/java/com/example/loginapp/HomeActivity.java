@@ -8,7 +8,9 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -25,7 +27,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.loginapp.Adapters.MyApplication;
+import com.example.loginapp.utils.AppPreferences;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -33,29 +38,46 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
+    FirebaseUser firebaseUser;
     private TextView mTextViewData;
     private DatabaseReference mDataBase;
     private DatabaseReference mDataBase2;
     private RecyclerView mBlogList;
-    FirebaseUser firebaseUser;
+    private ImageButton loginOut;
+
+
     ImageView imgUser;
     DatabaseReference databaseReference2;
+
+   private FirebaseFirestore mFireS;
+
     private DatabaseReference databaseReference3;
+
     private FirebaseAuth firebaseAuth;
-    private FirebaseDatabase firebaseDatabase;
+
+    private  FirebaseDatabase firebaseDatabase;
+
     private ImageView imgUserPost;
 
     //ImageButtons Top menu
     private ImageButton logoutTopBar;
     private ImageButton postTopBar;
     private ImageButton searchTopBar;
-    private ImageButton loginOut;
+    private String TAG="HomeActivity";
     //End Top menu buttons
 
 
@@ -65,9 +87,15 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         mBlogList = (RecyclerView) findViewById(R.id.blog_list);
+
+        loginOut = findViewById(R.id.btnShutOffTopBar_Home);
+
         mBlogList.setHasFixedSize(true);
         mBlogList.setLayoutManager(new LinearLayoutManager(this));
         databaseReference2 = FirebaseDatabase.getInstance().getReference();
+        mFireS = FirebaseFirestore.getInstance();
+        FirebaseDatabase.getInstance().getReference();
+
         imgUser = findViewById(R.id.imagePerf2);
         TextView textView = (TextView) findViewById(R.id.idMyname);
         TextView textView2 = (TextView) findViewById(R.id.idMemberD);
@@ -77,7 +105,21 @@ public class HomeActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        mAuth = FirebaseAuth.getInstance();
+
+
+
+
+
+
+        mAuth=FirebaseAuth.getInstance();
+        //-----------------------------------------Objeto de consulta----------------------------//
+        Map<String, Object> data1 = new HashMap<>();
+        data1.put("Users", mAuth.getCurrentUser().getEmail());
+        //-----------------------------------------Objeto de consulta----------------------------//
+
+        CollectionReference emails = mFireS.collection(mAuth.getCurrentUser().getEmail());
+        //Fijarse en este sf
+        emails.document("SF").set(data1);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -90,11 +132,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
         ///TOP MENU IMAGE BUTTONS (LOG OUT / ADD TIPS / SEARCH TIPS)
-        logoutTopBar = findViewById(R.id.TopBar_Home);
+        logoutTopBar = findViewById(R.id.logoutTopBar_Home);
         postTopBar = findViewById(R.id.postTopBar_Home);
         searchTopBar = findViewById(R.id.searchTopBar_Home);
-        loginOut = findViewById(R.id.btnShutOffTopBar_Home);
-
 
         //Add Clicks
         checkUserStatus();
@@ -104,14 +144,16 @@ public class HomeActivity extends AppCompatActivity {
             @SuppressLint("WrongViewCast")
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
+                if (dataSnapshot.exists()){
 
                     String id = mAuth.getCurrentUser().getEmail();
                     Uri i2d = mAuth.getCurrentUser().getPhotoUrl();
                     databaseReference2 = FirebaseDatabase.getInstance().getReference();
                     databaseReference3 = FirebaseDatabase.getInstance().getReference().child("Blog");
                     mTextViewData.setText(id);
-                } else {
+
+                }
+                else {
                     mTextViewData.setText("Hola Invitado");
                 }
             }
@@ -123,14 +165,14 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    public void checkUserStatus() {
+    public void checkUserStatus(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             // Name, email address, and profile photo Url
             Uri photoUrl = user.getPhotoUrl();
             Glide.with(this).load(photoUrl).into(imgUser);
             String uid = user.getUid();
-            Toast.makeText(this, "METODO CHECK >>" + user.getEmail(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
             //Picasso.with(context).load(photoUrl).into(img);
         } else {
             //Usuario no conectado, debe ser redirigido hacia el inicio
@@ -162,12 +204,12 @@ public class HomeActivity extends AppCompatActivity {
         mBlogList.setAdapter(firebaseRecyclerAdapter);
     }
 
-    public static class BlogViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class BlogViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         //Variables de los Blogs ubicados en el RecyclerView del HomeActivity (Titulo, Descripcion, Categoria y Imagen)
         View mView;
         TextView post_title;
-        TextView post_desc, post_conso, post_categ;
+        TextView post_desc,post_conso,post_categ;
         ImageView post_image;
         Blog blogAux;
 
@@ -176,46 +218,43 @@ public class HomeActivity extends AppCompatActivity {
             mView = itemView;
         }
 
-        public void setConso(String conso) {
+        public void setConso(String conso){
             post_conso = (TextView) mView.findViewById(R.id.post_text);
             post_conso.setText(conso);
             post_conso.setOnClickListener(this);
         }
-
-        public void setCateg(String categ) {
+        public void setCateg(String categ){
             post_categ = (TextView) mView.findViewById(R.id.post_text);
             post_categ.setText(categ);
         }
 
 
-        public void setTitle(String title) {
+        public  void setTitle(String title){
             post_title = (TextView) mView.findViewById(R.id.post_title);
             post_title.setText(title);
             post_title.setOnClickListener(this);
 
         }
-
-        public void setDesc(String Desc) {
+        public void setDesc(String Desc){
             post_desc = (TextView) mView.findViewById(R.id.post_text);
             post_desc.setText(Desc);
             post_desc.setOnClickListener(this);
         }
-
-        public void setImg(Context ctx, String imgae) {
-            post_image = (ImageView) mView.findViewById(R.id.post_img);
+        public void setImg(Context ctx, String imgae){
+            post_image= (ImageView) mView.findViewById(R.id.post_img);
             Picasso.with(ctx).load(imgae).into(post_image);
             post_image.setOnClickListener(this);
         }
 
-        public void setBlog(Blog blog) {
+        public void setBlog(Blog blog){
             blogAux = blog;
         }
 
         @Override
         public void onClick(View v) {
-            Toast.makeText(MyApplication.getAppContext(), "Checkout this Blog!", Toast.LENGTH_SHORT).show();
+
             Intent BlogPage = new Intent(MyApplication.getAppContext(), BlogPageActivity.class);
-            BlogPage.putExtra("title", blogAux.getTitle());
+            BlogPage.putExtra("title",blogAux.getTitle());
             BlogPage.putExtra("console", blogAux.getConso());
             BlogPage.putExtra("descrip", blogAux.getDesc());
             BlogPage.putExtra("category", blogAux.getCateg());
@@ -229,17 +268,14 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    public void topBarListeners() {
+
+    public void topBarListeners(){
         logoutTopBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(HomeActivity.this, "Doing a button", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomeActivity.this, VideoActivity.class));
+
             }
         });
 
@@ -285,8 +321,8 @@ public class HomeActivity extends AppCompatActivity {
                         Intent intent = new Intent(MyApplication.getAppContext(), LoginActivity.class);
                         startActivity(intent);
                         finish();
-            }
-        }).setNegativeButton("No, return me", new DialogInterface.OnClickListener() {
+                    }
+                }).setNegativeButton("No, return me", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -299,5 +335,3 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 }
-
-
